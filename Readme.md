@@ -1,0 +1,32 @@
+# SaasRPlatform React Functional
+
+This repository contains the frontend part of the SaasRPlatform. SaasRPlatform, React işlevsel bileşenleri kullanılarak oluşturulmuş bir yazılım hizmeti platformudur.
+
+## Features
+
+- **User Authentication:** Kullanıcı kimlik doğrulama işlevselliği sağlar.
+- **Dashboard with Data Visualization:** Veri görselleştirmesi ile birlikte kullanıcı paneli.
+- **User Management:** Kullanıcı yönetimi için işlevsellik.
+- **Subscription Management:** Abonelik yönetimi için işlevsellik.
+- **Integration with SaasRPlatform Backend API:** SaasRPlatform arka uç API'siyle entegrasyon sağlar.
+
+## Technologies Used
+
+- **React:** Kullanıcı arayüzü oluşturmak için kullanılan bir JavaScript kütüphanesi.
+- **Redux:** Durum yönetimi için kullanılan bir JavaScript kütüphanesi.
+- **React Router:** Uygulama rotalarını tanımlamak için kullanılan bir React kütüphanesi.
+- **Material-UI:** Kullanıcı arayüzü bileşenleri oluşturmak için kullanılan bir React kütüphanesi.
+- **Axios:** HTTP istekleri yapmak için kullanılan bir JavaScript kütüphanesi.
+
+## Getting Started
+
+Projeye başlamak için aşağıdaki adımları izleyin:
+
+1. Bu depoyu klonlayın.
+2. Gerekli bağımlılıkları yüklemek için `npm install` komutunu çalıştırın.
+3. Ortam değişkenlerini yapılandırın.
+4. Geliştirme sunucusunu başlatmak için `npm start` komutunu çalıştırın.
+
+## License
+
+Bu proje MIT Lisansı ile lisanslanmıştır. Ayrıntılar için [LICENSE](LICENSE) dosyasına bakın.
