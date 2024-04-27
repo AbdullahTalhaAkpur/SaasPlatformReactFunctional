@@ -18,14 +18,6 @@ This repository contains the frontend part of the SaasRPlatform. SaasRPlatform, 
 - **Material-UI:** Kullanıcı arayüzü bileşenleri oluşturmak için kullanılan bir React kütüphanesi.
 - **Axios:** HTTP istekleri yapmak için kullanılan bir JavaScript kütüphanesi.
 
-## Getting Started
-
-Projeye başlamak için aşağıdaki adımları izleyin:
-
-1. Bu depoyu klonlayın.
-2. Gerekli bağımlılıkları yüklemek için `npm install` komutunu çalıştırın.
-3. Ortam değişkenlerini yapılandırın.
-4. Geliştirme sunucusunu başlatmak için `npm start` komutunu çalıştırın.
 
 ## License
 
