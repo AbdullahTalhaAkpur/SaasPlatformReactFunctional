@@ -23,7 +23,7 @@
    display: flex;
    justify-content: center;
    align-items: center;
-   background: linear-gradient(to right, #6ab453, #bad28f); /* Replace with your desired gradient colors */
+   background: linear-gradient(to right, #d3fbd2, #e9edbf); /* Replace with your desired gradient colors */
 }
         
 .login-card {
@@ -64,11 +64,12 @@
     width: 100%;
     padding: 0.5rem;
     margin-bottom: 10px;
-    background-color: #ff6666; /* Replace with your desired button color */
+    background-color: #4a8e54; /* Replace with your desired button color */
     color: white;
     border: none;
     border-radius: 10px;
     cursor: pointer;
+    font-size: 20px;
 }
         
 .login-card button[type="submit"]:hover {
