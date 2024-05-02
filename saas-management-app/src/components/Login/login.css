@@ -23,7 +23,7 @@
    display: flex;
    justify-content: center;
    align-items: center;
-   background: linear-gradient(to right, #6ab453, #a7ea2c); /* Replace with your desired gradient colors */
+   background: linear-gradient(to right, #6ab453, #bad28f); /* Replace with your desired gradient colors */
 }
         
 .login-card {
