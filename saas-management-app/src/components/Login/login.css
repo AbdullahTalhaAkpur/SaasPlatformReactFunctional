@@ -38,10 +38,16 @@
   justify-content: center;
   align-items: center;
 }
+
+.login {
+   padding: 10px;
+   font-size: 30px;
+}
         
 .login-card h2 {
    margin-top: 0;
    text-align: center;
+   color: #15551d;
 }
         
 .login-card label {
@@ -73,5 +79,5 @@
 }
         
 .login-card button[type="submit"]:hover {
-    background-color: #ff4d4d; /* Replace with your desired hover color */
+    background-color: #6a24e2; /* Replace with your desired hover color */
 }
