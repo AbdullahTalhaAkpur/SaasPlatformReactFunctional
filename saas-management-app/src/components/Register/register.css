@@ -1,0 +1,83 @@
+.register-container {
+          display: flex;
+          height: 100vh;
+       }
+               
+       .logo-container {
+          width: 50%;
+          height: 100vh;
+          flex: 1;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          overflow: hidden;
+       }
+       
+       .logo-container img {
+          height: 100%;
+          object-fit: cover;
+       }
+               
+       .register-card-container {
+          flex: 1;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background: linear-gradient(to left, #d3fbd2, #e9edbf); /* Replace with your desired gradient colors */
+       }
+               
+       .register-card {
+         width: 50%;
+         height: 55%;
+         padding: 2rem;
+         background-color: white;
+         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+         border-radius: 7px;
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+         align-items: center;
+       }
+       
+       .register {
+          padding: 10px;
+          font-size: 20px;
+       }
+               
+       .register-card h2 {
+          margin-top: 0;
+          text-align: center;
+          color: #15551d;
+       }
+               
+       .register-card label {
+          display: block;
+          margin-bottom: 0.5rem;
+       }
+               
+       .register-card input[type="email"],
+       .register-card input[type="password"] {
+          width: 90%;
+          padding: 0.5rem;
+          margin-bottom: 1rem;
+          border-radius: 10px;
+          border: 1px solid #ccc;
+          align-items: center;
+          justify-content: center;
+       }
+               
+       .register-card button[type="submit"] {
+           width: 100%;
+           padding: 0.5rem;
+           margin-bottom: 10px;
+           background-color: #4a8e54; /* Replace with your desired button color */
+           color: white;
+           border: none;
+           border-radius: 10px;
+           cursor: pointer;
+           font-size: 20px;
+       }
+               
+       .register-card button[type="submit"]:hover {
+           background-color: #6a24e2; /* Replace with your desired hover color */
+       }
