@@ -81,3 +81,7 @@
 .login-card button[type="submit"]:hover {
     background-color: #6a24e2; /* Replace with your desired hover color */
 }
+
+.register {
+   font-size: 20px;
+}

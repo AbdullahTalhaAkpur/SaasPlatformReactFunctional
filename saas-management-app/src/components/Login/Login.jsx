@@ -1,7 +1,6 @@
 import React from 'react';
 import  './login.css';
 import logo from '../assets/agriverts-555.png';
-import { Link } from 'react-router-dom';
 
 const Login = ({ onSwitchForm }) => {
       const handleSubmit = (e) => {
@@ -21,7 +20,7 @@ const Login = ({ onSwitchForm }) => {
             <label htmlFor="password">Password</label>
             <input type="password" id="password" name="password" />
             <button type="submit">Login</button>
-            <p>Dont have an account ? <Link to="../Register/Register.jsx" className='register'>Register</Link></p>
+            <p>Dont have an account ? <a className='register' href='#register' onClick={() => onSwitchForm('register')}>Register</a></p>
          </form>
            </div>
           </div>
