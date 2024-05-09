@@ -1,27 +1,20 @@
 import React from 'react';
-import  Login  from './components/Login/Login.jsx';
-import { useState } from 'react';
-import Register from './components/Register/Register.jsx';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Login from './components/Login/Login';
+import Register from './components/Register/Register';
 
 function App() {
-  const [currentForm, setCurrentForm] = useState('login');
+  const [formType, setFormType] = React.useState('login');
 
-  const handleFormSwitch = (formType) => {
-    setCurrentForm(formType);
-  }
+  const handleSwitchForm = (type) => {
+    setFormType(type);
+  };
 
   return (
     <BrowserRouter>
-    <div className="App">
-      {
-        currentForm === "login" ? (
-          <Login onSwitchForm={() => handleFormSwitch('register')} /> 
-        ) : (
-          <Register onSwitchForm={() => handleFormSwitch('login')} />
-        )
-      } 
-    </div>
+      <Routes>
+        <Route path="/" element={formType === 'login'? <Login onSwitchForm={handleSwitchForm} /> : <Register onSwitchForm={handleSwitchForm} />} />
+      </Routes>
     </BrowserRouter>
   );
 }

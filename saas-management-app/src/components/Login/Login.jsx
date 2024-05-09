@@ -2,9 +2,10 @@ import React from 'react';
 import  './login.css';
 import logo from '../assets/agriverts-555.png';
 
-const Login = ({ onSwitchForm }) => {
-      const handleSubmit = (e) => {
-         e.preventDefault();
+const Login = ({ onSwitchForm, onLogin }) => {
+      const handleSubmit = (event) => {
+         event.preventDefault();
+         onLogin();
       }
       return (
          <div className="login-container">
@@ -20,7 +21,7 @@ const Login = ({ onSwitchForm }) => {
             <label htmlFor="password">Password</label>
             <input type="password" id="password" name="password" />
             <button type="submit">Login</button>
-            <p>Dont have an account ? <a className='register' href='#register' onClick={() => onSwitchForm('register')}>Register</a></p>
+            <p>Dont have an account ? <a className='registerlink' href='#register' onClick={() => onSwitchForm('register')}>Register</a></p>
          </form>
            </div>
           </div>

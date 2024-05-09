@@ -29,7 +29,7 @@ const Register = ({ onSwitchForm }) => {
           <label htmlFor="password">Password</label>
           <input value={pass} onChange={(e) => setPass(e.target.value)} type="password" id="password" name="password" />
           <button type="submit">Register</button>
-          <p>Already have an account ? <a className='login' href='#login' onClick={() => onSwitchForm('login')}>Login</a></p>
+          <p>Already have an account ? <a className='loginlink' href='#login' onClick={() => onSwitchForm('login')}>Login</a></p>
        </form>
          </div>
         </div>
