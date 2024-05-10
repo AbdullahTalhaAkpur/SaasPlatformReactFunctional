@@ -16,7 +16,7 @@ const Login = ({ onSwitchForm, onLogin }) => {
          <div className="login-card">
             <h2 className='login'>Login</h2>
          <form onSubmit={handleSubmit}>
-            <label htmlFor="email">Email</label>
+            <label htmlFor="email">Username</label>
             <input type="email" id="email" name="email" />
             <label htmlFor="password">Password</label>
             <input type="password" id="password" name="password" />
