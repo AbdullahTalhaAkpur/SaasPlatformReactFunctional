@@ -7,6 +7,7 @@ const Register = ({ onSwitchForm }) => {
   const [email, setEmail] = useState('');
   const [pass, setPass] = useState('');
   const [name, setName] = useState('');
+  const [username, setUsername] = useState('');
 
   const handleSubmit = (e) => {
         e.preventDefault();
@@ -24,6 +25,8 @@ const Register = ({ onSwitchForm }) => {
        <form onSubmit={handleSubmit}>
           <label htmlFor="name">Full Name</label>
           <input value={name} onChange={(e) => setName(e.target.value)} type='text' name='name' id='name' ></input>
+          <label htmlFor="username">Username</label>
+          <input value={username} onChange={(e) => setUsername(e.target.value)} type='text' name='username' id='username' ></input>
           <label htmlFor="email">Email</label>
           <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" id="email" name="email" />
           <label htmlFor="password">Password</label>
