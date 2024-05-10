@@ -3,5 +3,17 @@
        "fullName": "Abdullah Duman",
        "email": ["info@agriverts.com", "abdullah@agriverts.com"],
        "password": "12345"  
+   },
+   {
+       "fullName": "Abdullah Talha Akpur",
+       "username": "ofakduman",
+       "email": ["akpurrabdullah@gmail.com", "talhaakpurr@gmail.com"],
+       "password": "123ab"
+   },
+   {
+       "fullName": "Ömer Faruk Akduman",
+       "username": "ofakduman",
+       "email": "o.f.akduman@gmail.com",
+       "password": "123"   
    }       
 ]
