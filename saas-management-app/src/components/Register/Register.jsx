@@ -1,17 +1,24 @@
 import React, { useState } from 'react'
 import './register.css'
 import logo from '../assets/agriverts-555.png';
-
+import { useHistory } from 'react-router-dom'
+import { register } from '../auth/auth';
 
 const Register = ({ onSwitchForm }) => {
   const [email, setEmail] = useState('');
   const [pass, setPass] = useState('');
   const [name, setName] = useState('');
   const [username, setUsername] = useState('');
-
+  const history = useHistory();
+ 
   const handleSubmit = (e) => {
         e.preventDefault();
-        console.log();
+        try {
+          register(email, pass, name, username)
+          history.push('../Dashboard/Dashboard.jsx');        
+        } catch (error) {
+          alert(error.message)
+        }
   }
   
   return (
