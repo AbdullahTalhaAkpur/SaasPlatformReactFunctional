@@ -11,12 +11,8 @@ const Login = ({ onSwitchForm }) => {
    
    const handleSubmit = (event) => {
          event.preventDefault();
-         try {
-            login(username, password);
-            history.push('../Dashboard/Dashboard.jsx');
-            } catch (error) {
-            console.log(error);
-         }
+         login(username, password);
+         history.push('/Dashboard');
       }
 
 
