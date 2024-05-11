@@ -1,18 +1,18 @@
 import React, { useState } from 'react';
 import  './login.css';
 import logo from '../assets/agriverts-555.png';
-import { useHistory } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { login } from '../auth/auth';
 
 const Login = ({ onSwitchForm }) => {
    const [username, setUsername] = useState('');
    const [password, setPassword] = useState('');
-   const history = useHistory();  
+   const navigate = useNavigate();  
    
    const handleSubmit = (event) => {
          event.preventDefault();
          login(username, password);
-         history.push('/Dashboard');
+         navigate('/Dashboard', { replace: true });
       }
 
 
