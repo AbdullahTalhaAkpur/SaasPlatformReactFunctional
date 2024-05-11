@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import './register.css'
 import logo from '../assets/agriverts-555.png';
-import { useHistory } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { register } from '../auth/auth';
 
 const Register = ({ onSwitchForm }) => {
@@ -9,13 +9,13 @@ const Register = ({ onSwitchForm }) => {
   const [pass, setPass] = useState('');
   const [name, setName] = useState('');
   const [username, setUsername] = useState('');
-  const history = useHistory();
+  const navigate = useNavigate();
  
   const handleSubmit = (e) => {
         e.preventDefault();
         try {
           register(email, pass, name, username)
-          history.push('../Dashboard/Dashboard.jsx');        
+          navigate('/Dashboard');        
         } catch (error) {
           alert(error.message)
         }
