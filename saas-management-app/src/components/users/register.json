@@ -2,13 +2,13 @@
    {
        "fullName": "Abdullah Duman",
        "username": "aduman",
-       "email": ["info@agriverts.com", "abdullah@agriverts.com"],
+       "email": "info@agriverts.com",
        "password": "12345"  
    },
    {
        "fullName": "Abdullah Talha Akpur",
        "username": "akpur",
-       "email": ["akpurrabdullah@gmail.com", "talhaakpurr@gmail.com"],
+       "email": "akpurrabdullah@gmail.com",
        "password": "123ab"
    },
    {

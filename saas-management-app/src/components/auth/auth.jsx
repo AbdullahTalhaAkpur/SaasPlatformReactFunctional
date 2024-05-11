@@ -1,9 +1,9 @@
 const loginData = require('../users/login.json');
 const registerData = require('../users/register.json');
 
-const login = (email, password) => {
+const login = (username, password) => {
   const user = loginData.find(
-    (user) => user.email.includes(email) && user.password === password
+    (user) => user.username === username && user.password === password
   );
 
   if (user) {
