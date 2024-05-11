@@ -12,8 +12,9 @@ import Sidebar from '../Sidebar/Sidebar'
  
 const Dashboard = () => {
   return (
+    <div>
+    <Sidebar />
     <Routes>
-      <Sidebar />
       <Route path='/Team'  element={Team}/>
       <Route path='/Facilities'  element={Facilities}/>
       <Route path='/Missions'  element={Missions}/>
@@ -21,7 +22,8 @@ const Dashboard = () => {
       <Route path='/Graphs'  element={Graphs}/>
       <Route path='/Settings'  element={Settings}/>
       <Route path='/Exit'  element={Exit}/>
-    </Routes>   
+    </Routes> 
+    </div>  
   )
 }
 
