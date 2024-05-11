@@ -8,10 +8,12 @@ import Graphs from '../Graphs/Graphs'
 import Settings from '../Settings/Settings'
 import Exit from '../Exit/Exit'
 import {Route, Routes } from 'react-router-dom'
+import Sidebar from '../Sidebar/Sidebar'
  
 const Dashboard = () => {
   return (
     <Routes>
+      <Sidebar />
       <Route path='/Team'  element={Team}/>
       <Route path='/Facilities'  element={Facilities}/>
       <Route path='/Missions'  element={Missions}/>

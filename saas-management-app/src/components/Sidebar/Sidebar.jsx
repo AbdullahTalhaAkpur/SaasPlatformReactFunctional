@@ -2,6 +2,16 @@ import { Drawer, List, ListItem, ListItemButton, ListItemText } from '@mui/mater
 import { useLocation } from 'react-router-dom';
 import React from 'react';
 
+const sidebarLinks = [
+          { path: '/Team', label: 'Team' },
+          { path: '/Facilities', label: 'Facilities' },
+          { path: '/Missions', label: 'Missions' },
+          { path: '/Product', label: 'Product' },
+          { path: '/Graphs', label: 'Graphs' },
+          { path: '/Settings', label: 'Settings' },
+          { path: '/Exit', label: 'Exit' },       
+]
+
 const Sidebar = () => {
           const location = useLocation();
           const [sidebarOpen, setSidebarOpen] = React.useState(false);
@@ -32,14 +42,5 @@ const handleSidebarToggle = () => {
           );
         };
 
-const sidebarLinks = [
-          { path: '/Team', label: 'Team' },
-          { path: '/Facilities', label: 'Facilities' },
-          { path: '/Missions', label: 'Missions' },
-          { path: '/Product', label: 'Product' },
-          { path: '/Graphs', label: 'Graphs' },
-          { path: '/Settings', label: 'Settings' },
-          { path: '/Exit', label: 'Exit' },       
-]
 
 export default Sidebar;
