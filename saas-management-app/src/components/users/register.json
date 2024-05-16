@@ -1,0 +1,20 @@
+[
+          {
+              "fullName": "Abdullah Duman",
+              "username": "aduman",
+              "email": "info@agriverts.com",
+              "password": "12345"  
+          },
+          {
+              "fullName": "Abdullah Talha Akpur",
+              "username": "akpur",
+              "email": "akpurrabdullah@gmail.com",
+              "password": "123ab"
+          },
+          {
+              "fullName": "Ömer Faruk Akduman",
+              "username": "ofakduman",
+              "email": "o.f.akduman@gmail.com",
+              "password": "123"   
+          }       
+]
