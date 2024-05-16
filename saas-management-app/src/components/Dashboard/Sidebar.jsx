@@ -3,11 +3,13 @@ import { Drawer, List, ListItem, ListItemButton, ListItemText } from '@mui/mater
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import './sidebar.css';
 
+
+
 const sidebarLinks = [
   { path: '/dashboard/dashboard', label: 'Dashboard' }, // Dosya yollarını düzgün bir şekilde ayarladık
-  { path: '/dashboard/team', label: 'Team' }, // Dosya yollarını düzgün bir şekilde ayarladık
+  { path: '/dashboard/team', label: 'Team'  }, // Dosya yollarını düzgün bir şekilde ayarladık
   { path: '/dashboard/facilities', label: 'Facilities' },
-  { path: '/dashboard/missions', label: 'Missions' },
+  { path: '/dashboard/missions', label: 'Missions', },
   { path: '/dashboard/product-tracking', label: 'Product Tracking' }, // Bunu değiştirdik
   { path: '/dashboard/graphs', label: 'Graphs' }, // Bunu değiştirdik
   { path: '/dashboard/settings', label: 'Settings' },
