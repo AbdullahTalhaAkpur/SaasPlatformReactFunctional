@@ -15,13 +15,13 @@ const Dashboard = () => {
     <div>
     <Sidebar />
     <Routes>
-      <Route path='/Team'  element={Team}/>
-      <Route path='/Facilities'  element={Facilities}/>
-      <Route path='/Missions'  element={Missions}/>
-      <Route path='/Product' element={Product}/>
-      <Route path='/Graphs'  element={Graphs}/>
-      <Route path='/Settings'  element={Settings}/>
-      <Route path='/Exit'  element={Exit}/>
+    <Route path="/dashboard/team" element={<Team />} />
+          <Route path="/dashboard/facilities" element={<Facilities />} />
+          <Route path="/dashboard/missions" element={<Missions />} />
+          <Route path="/dashboard/product-tracking" element={<Product />} />
+          <Route path="/dashboard/graphs" element={<Graphs />} />
+          <Route path="/dashboard/settings" element={<Settings />} />
+          <Route path="/dashboard/exit" element={<Exit />} />
     </Routes> 
     </div>  
   )
