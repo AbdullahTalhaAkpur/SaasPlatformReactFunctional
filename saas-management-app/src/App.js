@@ -15,7 +15,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<div>{formType === 'login' ? <Login onSwitchForm={handleSwitchForm} /> : <Register onSwitchForm={handleSwitchForm} />}</div>} />
-        <Route path='/Dashboard' element={<Dashboard />} />
+        <Route path='/Dashboard/*' element={<Dashboard />} />
       </Routes>
     </BrowserRouter>
   );

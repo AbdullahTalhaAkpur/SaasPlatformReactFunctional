@@ -1,14 +1,14 @@
 import React from 'react'
 import './dashboard.css'
-import Team from '../Team/Team'
-import Facilities from '../Facilities/Facilities'
-import Missions from '../Missions/Missions'
-import Product from  '../Product/ProductTracking'
-import Graphs from '../Graphs/Graphs'
-import Settings from '../Settings/Settings'
-import Exit from '../Exit/Exit'
+import Team from './Team'
+import Facilities from './Facilities'
+import Missions from './Missions'
+import Product from  './ProductTracking'
+import Graphs from './Graphs'
+import Settings from './Settings'
+import Exit from './Exit'
 import {Route, Routes } from 'react-router-dom'
-import Sidebar from '../Sidebar/Sidebar'
+import Sidebar from './Sidebar'
  
 const Dashboard = () => {
   return (
