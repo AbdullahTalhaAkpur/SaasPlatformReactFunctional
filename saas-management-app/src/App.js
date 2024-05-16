@@ -1,8 +1,11 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { CssBaseline, Box, Toolbar } from '@mui/material';
 import Login from './components/Login/Login';
 import Register from './components/Register/Register';
 import Dashboard from './components/Dashboard/Dashboard';
+import Sidebar from './components/Sidebar/Sidebar.jsx';
+import Header from './components/Header/Header.jsx';
 
 function App() {
   const [formType, setFormType] = React.useState('login');
@@ -13,9 +16,25 @@ function App() {
 
   return (
     <BrowserRouter>
+      <CssBaseline />
       <Routes>
-        <Route path="/" element={<div>{formType === 'login' ? <Login onSwitchForm={handleSwitchForm} /> : <Register onSwitchForm={handleSwitchForm} />}</div>} />
-        <Route path='/Dashboard/*' element={<Dashboard />} />
+        <Route path="/" element={
+          <div>
+            {formType === 'login' 
+              ? <Login onSwitchForm={handleSwitchForm} /> 
+              : <Register onSwitchForm={handleSwitchForm} />}
+          </div>
+        } />
+        <Route path="/dashboard/*" element={
+          <Box sx={{ display: 'flex' }}>
+            <Header />
+            <Sidebar />
+            <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+              <Toolbar />
+              <Dashboard />
+            </Box>
+          </Box>
+        } />
       </Routes>
     </BrowserRouter>
   );
