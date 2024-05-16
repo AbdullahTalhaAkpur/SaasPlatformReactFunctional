@@ -8,6 +8,11 @@ const Login = ({ onSwitchForm }) => {
     const [password, setPassword] = useState('');
 
 
+    const handleSubmit = (event) => {
+          event.preventDefault();
+          login(username, password)
+    }
+
   return (
     <div>Login</div>
   )
