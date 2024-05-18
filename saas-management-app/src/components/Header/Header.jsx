@@ -7,7 +7,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 
 const Header = () => {
   return (
-    <AppBar position="fixed" sx={{ zIndex: theme => theme.zIndex.drawer + 1 }}>
+    <AppBar position="fixed" sx={{backgroundColor: '#bad28f', zIndex: theme => theme.zIndex.drawer + 1 }}>
       <Toolbar>
         <IconButton
           edge="start"

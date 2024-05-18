@@ -31,42 +31,42 @@ const Sidebar = () => {
         />
       </Toolbar>
       <List sx={{ mt: 2}} >
-        <ListItem button sx={{paddingLeft: 6}}>
+        <ListItem button sx={{paddingLeft: 6, '&:hover': {backgroundColor: '#bad28f' }}}>
           <ListItemIcon><HomeIcon /></ListItemIcon>
           <ListItemText primary="Ana Sayfa" />
         </ListItem>
-        <ListItem button sx={{paddingLeft: 6}}>
+        <ListItem button sx={{paddingLeft: 6, '&:hover': {backgroundColor: '#bad28f' }}}>
           <ListItemIcon><GroupIcon /></ListItemIcon>
           <ListItemText primary="Takım" />
         </ListItem>
-        <ListItem button sx={{paddingLeft: 6}}>
+        <ListItem button sx={{paddingLeft: 6, '&:hover': {backgroundColor: '#bad28f' }}}>
           <ListItemIcon><BusinessIcon /></ListItemIcon>
           <ListItemText primary="Tesisler" />
         </ListItem>
-        <ListItem button sx={{paddingLeft: 6}}>
+        <ListItem button sx={{paddingLeft: 6, '&:hover': {backgroundColor: '#bad28f' }}}>
           <ListItemIcon><AssignmentIcon /></ListItemIcon>
           <ListItemText primary="Görevler" />
         </ListItem>
-        <ListItem button sx={{paddingLeft: 6}}>
+        <ListItem button sx={{paddingLeft: 6, '&:hover': {backgroundColor: '#bad28f' }}}>
           <ListItemIcon><TrackChangesIcon /></ListItemIcon>
           <ListItemText primary="Üretim Takip" />
         </ListItem>
-        <ListItem button sx={{paddingLeft: 6}}>
+        <ListItem button sx={{paddingLeft: 6, '&:hover': {backgroundColor: '#bad28f' }}}>
           <ListItemIcon><BarChartIcon /></ListItemIcon>
           <ListItemText primary="Grafikler" />
         </ListItem>
-        <ListItem button sx={{paddingLeft: 6}}>
+        <ListItem button sx={{paddingLeft: 6, '&:hover': {backgroundColor: '#bad28f' }}}>
           <ListItemIcon><ChatIcon /></ListItemIcon>
           <ListItemText primary="Agri-Al" />
         </ListItem>
-        <ListItem button sx={{paddingLeft: 6}}>
+        <ListItem button sx={{paddingLeft: 6, '&:hover': {backgroundColor: '#bad28f' }}}>
           <ListItemIcon><SettingsIcon /></ListItemIcon>
           <ListItemText primary="Ayarlar" />
         </ListItem>
       </List>
       <Box sx={{ flexGrow: 1 }} />
       <List>
-        <ListItem button sx={{paddingLeft: 6}}>
+        <ListItem button sx={{paddingLeft: 6, '&:hover': {backgroundColor: '#bad28f' }}}>
           <ListItemIcon><ExitToAppIcon /></ListItemIcon>
           <ListItemText primary="Çıkış" />
         </ListItem>
