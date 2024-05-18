@@ -28,7 +28,7 @@
                 
         .register-card {
           width: 50%;
-          height: 65%;
+          height: 78%;
           padding: 2rem;
           background-color: white;
           box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -65,7 +65,7 @@
         }
                 
         .register-card button[type="submit"] {
-          width: 100%;
+          width: 90%;
           padding: 0.5rem;
           margin-bottom: 10px;
           background-color: #4a8e54; /* Replace with your desired button color */
