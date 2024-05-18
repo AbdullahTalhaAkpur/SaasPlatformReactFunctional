@@ -44,7 +44,7 @@ const Sidebar = () => {
           <ListItemIcon><BusinessIcon /></ListItemIcon>
           <ListItemText primary="Tesisler" />
         </ListItem>
-        <ListItem button components={Link} to="/tasks" sx={{paddingLeft: 6, '&:hover': {backgroundColor: '#bad28f' }}}>
+        <ListItem button components={Link} to="/missions" sx={{paddingLeft: 6, '&:hover': {backgroundColor: '#bad28f' }}}>
           <ListItemIcon><AssignmentIcon /></ListItemIcon>
           <ListItemText primary="Görevler" />
         </ListItem>

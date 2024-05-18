@@ -6,6 +6,9 @@ import Register from './components/Register/Register';
 import Dashboard from './components/Dashboard/Dashboard';
 import Sidebar from './components/Sidebar/Sidebar.jsx';
 import Header from './components/Header/Header.jsx';
+import Team from './components/Team/Team.jsx';
+import Facilities from './components/Facilities/Facilities.jsx';
+import Missions from './components/Missions/Missions.jsx';
 
 function App() {
   const [formType, setFormType] = React.useState('login');
@@ -31,7 +34,12 @@ function App() {
             <Sidebar />
             <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
               <Toolbar />
-              <Dashboard />
+              <Routes >
+                <Route path='/home' element={<Dashboard />} />
+                <Route path='/team' element={<Team/>} />
+                <Route path='/facilities' element={<Facilities/>} />
+                <Route path='/missions' element={<Missions/>} />
+              </Routes>
             </Box>
           </Box>
         } />
