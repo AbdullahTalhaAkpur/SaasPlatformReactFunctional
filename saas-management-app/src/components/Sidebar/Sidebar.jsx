@@ -12,6 +12,7 @@ import SettingsIcon from '@mui/icons-material/Settings';
 import ExitToAppIcon from '@mui/icons-material/ExitToApp';
 import logo from '../assets/Logo_Dikey.png'; // Adjust the path to your logo file
 import { Link} from 'react-router-dom';
+import Exit from '../Exit/Exit';
 
 const Sidebar = () => {
   
@@ -69,9 +70,9 @@ const Sidebar = () => {
       </List>
       <Box sx={{ flexGrow: 1 }} />
       <List>
-        <ListItem button component={Link} to="/exit"  sx={{paddingLeft: 6, '&:hover': {backgroundColor: '#bad28f' }}}>
+        <ListItem button component="div"   sx={{paddingLeft: 6, '&:hover': {backgroundColor: '#bad28f' }}}>
           <ListItemIcon><ExitToAppIcon /></ListItemIcon>
-          <ListItemText primary="Çıkış" />
+          <ListItemText primary={<Exit />} />
         </ListItem>
       </List>
     </Drawer>
