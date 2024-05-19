@@ -1,9 +1,16 @@
 import React from 'react'
 import './exit.css'
+import { useNavigate } from 'react-router-dom'
 
 const Exit = () => {
+  const navigate = useNavigate()
+
+  const handleClick = () => {
+    navigate('../Login/Login.jsx');
+  }
+
   return (
-    <div>Exit</div>
+      <button onClick={handleClick}>Exit</button>
   )
 }
 

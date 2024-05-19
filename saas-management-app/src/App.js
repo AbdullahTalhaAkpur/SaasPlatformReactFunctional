@@ -9,6 +9,7 @@ import Header from './components/Header/Header.jsx';
 import Team from './components/Team/Team.jsx';
 import Facilities from './components/Facilities/Facilities.jsx';
 import Missions from './components/Missions/Missions.jsx';
+import Exit from './components/Exit/Exit.jsx';
 
 function App() {
   const [formType, setFormType] = React.useState('login');
@@ -39,6 +40,7 @@ function App() {
                 <Route path='/team' element={<Team/>} />
                 <Route path='/facilities' element={<Facilities/>} />
                 <Route path='/missions' element={<Missions/>} />
+                <Route path='/exit' element={<Exit/>} />
               </Routes>
             </Box>
           </Box>
