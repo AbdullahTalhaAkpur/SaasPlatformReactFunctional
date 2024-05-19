@@ -6,7 +6,10 @@ const Exit = () => {
 
  
   return (
-     <div>Exit</div>
+     <div>
+       <h1>Exit</h1>
+      
+    </div>
   )
 }
 
