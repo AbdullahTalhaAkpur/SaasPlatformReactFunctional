@@ -6,7 +6,7 @@ const Exit = () => {
   const navigate = useNavigate()
 
   const handleClick = () => {
-    navigate('../Login/Login.jsx');
+    navigate('/');
   }
 
   return (
