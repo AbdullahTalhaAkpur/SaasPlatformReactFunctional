@@ -17,6 +17,7 @@ function App() {
   const handleSwitchForm = (type) => {
     setFormType(type);
   };
+  
 
   return (
     <BrowserRouter>

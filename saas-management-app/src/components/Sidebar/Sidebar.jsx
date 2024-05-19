@@ -11,9 +11,12 @@ import ChatIcon from '@mui/icons-material/Chat';
 import SettingsIcon from '@mui/icons-material/Settings';
 import ExitToAppIcon from '@mui/icons-material/ExitToApp';
 import logo from '../assets/Logo_Dikey.png'; // Adjust the path to your logo file
-import { Link } from 'react-router-dom';
+import { Link} from 'react-router-dom';
 
 const Sidebar = () => {
+
+  
+
   return (
     <Drawer
       variant="permanent"
