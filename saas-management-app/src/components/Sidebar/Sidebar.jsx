@@ -14,7 +14,6 @@ import logo from '../assets/Logo_Dikey.png'; // Adjust the path to your logo fil
 import { Link} from 'react-router-dom';
 
 const Sidebar = () => {
-
   
 
   return (
@@ -70,7 +69,7 @@ const Sidebar = () => {
       </List>
       <Box sx={{ flexGrow: 1 }} />
       <List>
-        <ListItem button component={Link} to="/exit" sx={{paddingLeft: 6, '&:hover': {backgroundColor: '#bad28f' }}}>
+        <ListItem button component={Link} to="/exit"  sx={{paddingLeft: 6, '&:hover': {backgroundColor: '#bad28f' }}}>
           <ListItemIcon><ExitToAppIcon /></ListItemIcon>
           <ListItemText primary="Çıkış" />
         </ListItem>
