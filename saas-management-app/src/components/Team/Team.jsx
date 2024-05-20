@@ -17,6 +17,8 @@ const Team = () => {
     picture: ''
   });
 
+
+
   const handleClickOpen = () => {
     setOpen(true)
   }
@@ -45,7 +47,9 @@ const Team = () => {
     setOpen(false);
   }
 
+
   return (
+    <div>
     <Box p={2}>
     <Button variant="contained" color="primary" startIcon={<Add />} onClick={handleClickOpen}>
       Üye Ekle
@@ -90,6 +94,7 @@ const Team = () => {
       ))}
     </Grid>
   </Box>
+  </div>
   )
 }
 
