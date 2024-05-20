@@ -2,8 +2,13 @@ import React from 'react'
 import './team.css'
 
 const Team = () => {
+  
+
+
   return (
-    <div>Team</div>
+    <div>
+      <button>Add Member</button>
+    </div>
   )
 }
 
