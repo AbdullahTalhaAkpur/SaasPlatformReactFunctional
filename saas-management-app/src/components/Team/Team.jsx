@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import './team.css'
-import { Box, Button, Card, CardContent, CardMedia, Grid, TextField, Typography, Dialog, DialogActions, DialogContent, DialogTitle } from '@mui/material'
+import { Box, Button, Card, CardContent, CardMedia, Grid, TextField, Typography, Dialog, DialogActions, DialogContent, DialogTitle, Input } from '@mui/material'
 import { Add } from '@mui/icons-material'
 
 
@@ -14,7 +14,7 @@ const Team = () => {
     department: '',
     email: '',
     company: '',
-    picture: ''
+    picture: null
   });
 
 
@@ -34,6 +34,13 @@ const Team = () => {
     })
   }
 
+  const handleFileChange = (e) => {
+    setNewMember({
+      ...newMember,
+      picture: e.target.files[0]
+    })
+  }
+
   const handleAddMember = () => {
     setMembers([...members, {...newMember, id: members.length + 1 }]);
     setNewMember({
@@ -42,7 +49,7 @@ const Team = () => {
       department: '',
       email: '',
       company: '',
-      picture: ''
+      picture: null
     });
     setOpen(false);
   }
@@ -59,7 +66,7 @@ const Team = () => {
       <DialogContent>
         <TextField autoFocus margin="dense" name="firstName" label="İsim" fullWidth value={newMember.firstName} onChange={handleChange} />
         <TextField margin="dense" name="lastName" label="Soyisim" fullWidth value={newMember.lastName} onChange={handleChange} />
-        <TextField margin="dense" name="picture" label="Resim URL" fullWidth value={newMember.picture} onChange={handleChange} />
+        <Input type="file" name="picture" label="Profil Fotoğrafı"  fullWidth onChange={handleFileChange} />
         <TextField margin="dense" name="department" label="Departman" fullWidth value={newMember.department} onChange={handleChange} />
         <TextField margin="dense" name="email" label="Email" fullWidth value={newMember.email} onChange={handleChange} />
         <TextField margin="dense" name="company" label="Şirket" fullWidth value={newMember.company} onChange={handleChange} />
@@ -79,9 +86,10 @@ const Team = () => {
           <Card>
             <CardMedia
               component="img"
-              height="140"
-              image={member.picture || 'https://via.placeholder.com/150'}
+              height="100"
+              image={member.picture ? URL.createObjectURL(member.picture) : 'https://via.placeholder.com/150'}
               alt={`${member.firstName} ${member.lastName}`}
+              style={{ borderRadius: '50%' }}
             />
             <CardContent>
               <Typography variant="h6">{`${member.firstName} ${member.lastName}`}</Typography>
