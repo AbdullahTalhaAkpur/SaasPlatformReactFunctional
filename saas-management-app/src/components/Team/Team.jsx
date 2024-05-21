@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import './team.css';
-import { Box, Button, Card, CardContent, Grid, TextField, Typography, Dialog, DialogActions, DialogContent, DialogTitle, Input, Avatar, IconButton } from '@mui/material';
-import { Add, Delete } from '@mui/icons-material';
+import React, { useState, useEffect } from 'react'
+import './team.css'
+import { Box, Button, Card, CardContent, Grid, TextField, Typography, Dialog, DialogActions, DialogContent, DialogTitle, Input, Avatar, IconButton, MenuItem, Select, FormControl, InputLabel } from '@mui/material'
+import { Add, Delete } from '@mui/icons-material'
 
 // Assume you have imported the initial members JSON somehow, for example, using an import statement
 import initialMembers from '../users/members.json'; // Adjust the path as necessary
@@ -18,6 +18,7 @@ const Team = () => {
     department: '',
     email: '',
     company: '',
+    role: '',
     picture: null
   });
 
@@ -27,25 +28,25 @@ const Team = () => {
 
   const handleClickOpen = () => {
     setOpen(true);
-  };
+  }
 
   const handleClose = () => {
     setOpen(false);
-  };
+  }
 
   const handleChange = (e) => {
     setNewMember({
       ...newMember,
       [e.target.name]: e.target.value
     });
-  };
+  }
 
   const handleFileChange = (e) => {
     setNewMember({
       ...newMember,
       picture: e.target.files[0] ? URL.createObjectURL(e.target.files[0]) : null
     });
-  };
+  }
 
   const handleAddMember = () => {
     const newId = members.length ? members[members.length - 1].id + 1 : 1;
@@ -57,15 +58,16 @@ const Team = () => {
       department: '',
       email: '',
       company: '',
+      role: '',
       picture: null
     });
     setOpen(false);
-  };
+  }
 
   const handleDeleteMember = (id) => {
     const updatedMembers = members.filter(member => member.id !== id);
     setMembers(updatedMembers);
-  };
+  }
 
   return (
     <div>
@@ -89,6 +91,20 @@ const Team = () => {
             <TextField margin="dense" name="department" label="Departman" fullWidth value={newMember.department} onChange={handleChange} />
             <TextField margin="dense" name="email" label="Email" fullWidth value={newMember.email} onChange={handleChange} />
             <TextField margin="dense" name="company" label="Şirket" fullWidth value={newMember.company} onChange={handleChange} />
+            <FormControl fullWidth margin="dense">
+              <InputLabel id="role-label">Rol</InputLabel>
+              <Select
+                labelId="role-label"
+                name="role"
+                value={newMember.role}
+                onChange={handleChange}
+                label="Rol"
+              >
+                <MenuItem value="Yönetici">Yönetici</MenuItem>
+                <MenuItem value="Mühendis">Mühendis</MenuItem>
+                <MenuItem value="Saha Çalışanı">Saha Çalışanı</MenuItem>
+              </Select>
+            </FormControl>
           </DialogContent>
           <DialogActions>
             <Button onClick={handleClose} color="primary">
@@ -117,18 +133,33 @@ const Team = () => {
                   <Typography variant="h6" style={{ marginTop: '10px' }}>
                     {`${member.firstName} ${member.lastName}`}
                   </Typography>
-                  <Box display="flex" justifyContent="space-between" mt={1} flexDirection="column">
-                    <Box display="flex" justifyContent="space-between">
-                      <Typography variant="body2" color="textSecondary">
-                        <strong>Departman:</strong> {member.department}
-                      </Typography>
-                      <Typography variant="body2" color="textSecondary" style={{ marginLeft: '10px' }}>
-                        <strong>Email:</strong> {member.email}
-                      </Typography>
-                    </Box>
-                    <Typography variant="body2" color="textSecondary">
-                      <strong>Şirket:</strong> {member.company}
-                    </Typography>
+                  <Box mt={2}>
+                    <Grid container spacing={1}>
+                      <Grid item xs={4} style={{ textAlign: 'left' }}>
+                        <Typography variant="body2" color="textSecondary"><strong>Departman:</strong></Typography>
+                      </Grid>
+                      <Grid item xs={8} style={{ textAlign: 'left' }}>
+                        <Typography variant="body2" color="textSecondary">{member.department}</Typography>
+                      </Grid>
+                      <Grid item xs={4} style={{ textAlign: 'left' }}>
+                        <Typography variant="body2" color="textSecondary"><strong>Email:</strong></Typography>
+                      </Grid>
+                      <Grid item xs={8} style={{ textAlign: 'left' }}>
+                        <Typography variant="body2" color="textSecondary">{member.email}</Typography>
+                      </Grid>
+                      <Grid item xs={4} style={{ textAlign: 'left' }}>
+                        <Typography variant="body2" color="textSecondary"><strong>Şirket:</strong></Typography>
+                      </Grid>
+                      <Grid item xs={8} style={{ textAlign: 'left' }}>
+                        <Typography variant="body2" color="textSecondary">{member.company}</Typography>
+                      </Grid>
+                      <Grid item xs={4} style={{ textAlign: 'left' }}>
+                        <Typography variant="body2" color="textSecondary"><strong>Rol:</strong></Typography>
+                      </Grid>
+                      <Grid item xs={8} style={{ textAlign: 'left' }}>
+                        <Typography variant="body2" color="textSecondary">{member.role}</Typography>
+                      </Grid>
+                    </Grid>
                   </Box>
                 </CardContent>
               </Card>
@@ -137,7 +168,7 @@ const Team = () => {
         </Grid>
       </Box>
     </div>
-  );
-};
+  )
+}
 
-export default Team;
+export default Team
