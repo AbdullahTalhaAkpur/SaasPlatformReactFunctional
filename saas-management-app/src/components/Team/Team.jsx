@@ -1,12 +1,16 @@
-import React, { useState, useEffect } from 'react'
-import './team.css'
-import { Box, Button, Card, CardContent, Grid, TextField, Typography, Dialog, DialogActions, DialogContent, DialogTitle, Input, Avatar, IconButton } from '@mui/material'
-import { Add, Delete } from '@mui/icons-material'
+import React, { useState, useEffect } from 'react';
+import './team.css';
+import { Box, Button, Card, CardContent, Grid, TextField, Typography, Dialog, DialogActions, DialogContent, DialogTitle, Input, Avatar, IconButton } from '@mui/material';
+import { Add, Delete } from '@mui/icons-material';
 
 // Assume you have imported the initial members JSON somehow, for example, using an import statement
-import initialMembers from '../users/members.json';
+import initialMembers from '../users/members.json'; // Adjust the path as necessary
 
-const Team = () => {  
+const Team = () => {
+  const [members, setMembers] = useState(() => {
+    const savedMembers = JSON.parse(localStorage.getItem('members'));
+    return savedMembers || initialMembers;
+  });
   const [open, setOpen] = useState(false);
   const [newMember, setNewMember] = useState({
     firstName: '',
@@ -17,39 +21,36 @@ const Team = () => {
     picture: null
   });
 
-  const [members, setMembers] = useState(() => {
-    const savedMembers = JSON.parse(localStorage.getItem('members'));
-    return savedMembers || initialMembers;
-  });
-
   useEffect(() => {
     localStorage.setItem('members', JSON.stringify(members));
   }, [members]);
 
   const handleClickOpen = () => {
     setOpen(true);
-  }
+  };
 
   const handleClose = () => {
     setOpen(false);
-  }
+  };
 
   const handleChange = (e) => {
     setNewMember({
       ...newMember,
       [e.target.name]: e.target.value
     });
-  }
+  };
 
   const handleFileChange = (e) => {
     setNewMember({
       ...newMember,
-      picture: e.target.files[0]
+      picture: e.target.files[0] ? URL.createObjectURL(e.target.files[0]) : null
     });
-  }
+  };
 
   const handleAddMember = () => {
-    setMembers([...members, {...newMember, id: members.length + 1 }]);
+    const newId = members.length ? members[members.length - 1].id + 1 : 1;
+    const updatedMembers = [...members, { ...newMember, id: newId }];
+    setMembers(updatedMembers);
     setNewMember({
       firstName: '',
       lastName: '',
@@ -59,12 +60,12 @@ const Team = () => {
       picture: null
     });
     setOpen(false);
-  }
+  };
 
   const handleDeleteMember = (id) => {
     const updatedMembers = members.filter(member => member.id !== id);
     setMembers(updatedMembers);
-  }
+  };
 
   return (
     <div>
@@ -77,10 +78,10 @@ const Team = () => {
           <DialogContent>
             <Grid container spacing={2} alignItems="center">
               <Grid item>
-                <Avatar src={newMember.picture ? URL.createObjectURL(newMember.picture) : null} style={{ width: 100, height: 100 }} />
+                <Avatar src={newMember.picture} style={{ width: 100, height: 100 }} />
               </Grid>
               <Grid item>
-                <Input type="file" name="picture" fullWidth sx={{ marginTop: 2 }} onChange={handleFileChange} /> 
+                <Input type="file" name="picture" fullWidth sx={{ marginTop: 2 }} onChange={handleFileChange} />
               </Grid>
             </Grid>
             <TextField autoFocus margin="dense" name="firstName" label="İsim" fullWidth value={newMember.firstName} onChange={handleChange} />
@@ -104,7 +105,7 @@ const Team = () => {
               <Card>
                 <CardContent style={{ textAlign: 'center', position: 'relative' }}>
                   <Avatar 
-                    src={member.picture ? URL.createObjectURL(member.picture) : 'https://via.placeholder.com/100'}
+                    src={member.picture || 'https://via.placeholder.com/100'}
                     style={{ width: 100, height: 100, margin: 'auto' }}
                   />
                   <IconButton 
@@ -136,7 +137,7 @@ const Team = () => {
         </Grid>
       </Box>
     </div>
-  )
-}
+  );
+};
 
-export default Team
+export default Team;
