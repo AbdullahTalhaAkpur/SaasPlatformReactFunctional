@@ -1,10 +1,12 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import './team.css'
-import { Box, Button, Card, CardContent, Grid, TextField, Typography, Dialog, DialogActions, DialogContent, DialogTitle, Input, Avatar } from '@mui/material'
-import { Add } from '@mui/icons-material'
+import { Box, Button, Card, CardContent, Grid, TextField, Typography, Dialog, DialogActions, DialogContent, DialogTitle, Input, Avatar, IconButton } from '@mui/material'
+import { Add, Delete } from '@mui/icons-material'
+
+// Assume you have imported the initial members JSON somehow, for example, using an import statement
+import initialMembers from '../users/members.json';
 
 const Team = () => {  
-  const [members, setMembers] = useState([]);
   const [open, setOpen] = useState(false);
   const [newMember, setNewMember] = useState({
     firstName: '',
@@ -15,10 +17,19 @@ const Team = () => {
     picture: null
   });
 
+  const [members, setMembers] = useState(() => {
+    const savedMembers = JSON.parse(localStorage.getItem('members'));
+    return savedMembers || initialMembers;
+  });
+
+  useEffect(() => {
+    localStorage.setItem('members', JSON.stringify(members));
+  }, [members]);
+
   const handleClickOpen = () => {
-    setOpen(true)
+    setOpen(true);
   }
-  
+
   const handleClose = () => {
     setOpen(false);
   }
@@ -27,14 +38,14 @@ const Team = () => {
     setNewMember({
       ...newMember,
       [e.target.name]: e.target.value
-    })
+    });
   }
 
   const handleFileChange = (e) => {
     setNewMember({
       ...newMember,
       picture: e.target.files[0]
-    })
+    });
   }
 
   const handleAddMember = () => {
@@ -48,6 +59,11 @@ const Team = () => {
       picture: null
     });
     setOpen(false);
+  }
+
+  const handleDeleteMember = (id) => {
+    const updatedMembers = members.filter(member => member.id !== id);
+    setMembers(updatedMembers);
   }
 
   return (
@@ -86,23 +102,33 @@ const Team = () => {
           {members.map(member => (
             <Grid item xs={12} sm={6} md={4} key={member.id}>
               <Card>
-                <CardContent style={{ textAlign: 'center' }}>
+                <CardContent style={{ textAlign: 'center', position: 'relative' }}>
                   <Avatar 
                     src={member.picture ? URL.createObjectURL(member.picture) : 'https://via.placeholder.com/100'}
                     style={{ width: 100, height: 100, margin: 'auto' }}
                   />
+                  <IconButton 
+                    style={{ position: 'absolute', top: 0, right: 0 }}
+                    onClick={() => handleDeleteMember(member.id)}
+                  >
+                    <Delete />
+                  </IconButton>
                   <Typography variant="h6" style={{ marginTop: '10px' }}>
                     {`${member.firstName} ${member.lastName}`}
                   </Typography>
-                  <Typography variant="body2" color="textSecondary">
-                    <strong>Departman:</strong> {member.department}
-                  </Typography>
-                  <Typography variant="body2" color="textSecondary">
-                    <strong>Email:</strong> {member.email}
-                  </Typography>
-                  <Typography variant="body2" color="textSecondary">
-                    <strong>Şirket:</strong> {member.company}
-                  </Typography>
+                  <Box display="flex" justifyContent="space-between" mt={1} flexDirection="column">
+                    <Box display="flex" justifyContent="space-between">
+                      <Typography variant="body2" color="textSecondary">
+                        <strong>Departman:</strong> {member.department}
+                      </Typography>
+                      <Typography variant="body2" color="textSecondary" style={{ marginLeft: '10px' }}>
+                        <strong>Email:</strong> {member.email}
+                      </Typography>
+                    </Box>
+                    <Typography variant="body2" color="textSecondary">
+                      <strong>Şirket:</strong> {member.company}
+                    </Typography>
+                  </Box>
                 </CardContent>
               </Card>
             </Grid>

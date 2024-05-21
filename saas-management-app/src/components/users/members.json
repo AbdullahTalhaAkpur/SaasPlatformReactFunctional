@@ -1,0 +1,29 @@
+[
+          {
+            "id": 1,
+            "firstName": "Abdullah ",
+            "lastName": "Duman",
+            "department": "Ceo",
+            "email": "info@agriverts.com",
+            "company": "Agriverts",
+            "picture": null
+          },
+          {
+            "id": 2,
+            "firstName": "Abdullah Talha",
+            "lastName": "Akpur",
+            "department": "Frontend Developer",
+            "email": "akpurrabdullah@gmail.com",
+            "company": "Agriverts",
+            "picture": null
+          },
+          {
+            "id": 3,
+            "firstName": "Ömer Faruk",
+            "lastName": "Akduman",
+            "department": "Software Developer",
+            "email": "o.f.akduman@gmail.com",
+            "company": "İnfina Yazılım",
+            "picture": null
+          }
+        ]
