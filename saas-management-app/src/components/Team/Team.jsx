@@ -1,16 +1,9 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import './team.css'
 import { Box, Button, Card, CardContent, Grid, TextField, Typography, Dialog, DialogActions, DialogContent, DialogTitle, Input, Avatar, IconButton, MenuItem, Select, FormControl, InputLabel } from '@mui/material'
 import { Add, Delete } from '@mui/icons-material'
 
-// Assume you have imported the initial members JSON somehow, for example, using an import statement
-import initialMembers from '../users/members.json'; // Adjust the path as necessary
-
-const Team = () => {
-  const [members, setMembers] = useState(() => {
-    const savedMembers = JSON.parse(localStorage.getItem('members'));
-    return savedMembers || initialMembers;
-  });
+const Team = ({ members, setMembers }) => {
   const [open, setOpen] = useState(false);
   const [newMember, setNewMember] = useState({
     firstName: '',
@@ -21,10 +14,6 @@ const Team = () => {
     role: '',
     picture: null
   });
-
-  useEffect(() => {
-    localStorage.setItem('members', JSON.stringify(members));
-  }, [members]);
 
   const handleClickOpen = () => {
     setOpen(true);

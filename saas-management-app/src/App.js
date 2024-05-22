@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { CssBaseline, Box, Toolbar } from '@mui/material';
 import Login from './components/Login/Login';
@@ -12,12 +12,19 @@ import Missions from './components/Missions/Missions.jsx';
 import Exit from './components/Exit/Exit.jsx';
 
 function App() {
-  const [formType, setFormType] = React.useState('login');
+  const [formType, setFormType] = useState('login');
+  const [members, setMembers] = useState(() => {
+    const savedMembers = JSON.parse(localStorage.getItem('members'));
+    return savedMembers || [];
+  });
+
+  useEffect(() => {
+    localStorage.setItem('members', JSON.stringify(members));
+  }, [members]);
 
   const handleSwitchForm = (type) => {
     setFormType(type);
   };
-  
 
   return (
     <BrowserRouter>
@@ -38,9 +45,9 @@ function App() {
               <Toolbar />
               <Routes >
                 <Route path='/home' element={<Dashboard />} />
-                <Route path='/team' element={<Team/>} />
-                <Route path='/facilities' element={<Facilities/>} />
-                <Route path='/missions' element={<Missions/>} />
+                <Route path='/team' element={<Team members={members} setMembers={setMembers} />} />
+                <Route path='/facilities' element={<Facilities />} />
+                <Route path='/missions' element={<Missions members={members} />} />
                 <Route path='/exit' element={<Exit />} />
               </Routes>
             </Box>
