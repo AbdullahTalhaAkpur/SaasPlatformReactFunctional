@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './mission.css';
-import { Box, Button, Card, CardContent, Grid, TextField, Typography, Dialog, DialogActions, DialogContent, DialogTitle, IconButton, MenuItem, Select, FormControl, InputLabel, Checkbox, FormControlLabel } from '@mui/material';
-import { Add, Delete, CheckBox, CheckBoxOutlineBlank } from '@mui/icons-material';
+import { Box, Button, Card, CardContent, Grid, TextField, Typography, Dialog, DialogActions, DialogContent, DialogTitle, IconButton, MenuItem, Select, FormControl, InputLabel, Checkbox } from '@mui/material';
+import { Add, Delete, CheckBoxOutlineBlank, CheckBox } from '@mui/icons-material';
 
 const Missions = ({ members }) => {
   const [tasks, setTasks] = useState(() => {
@@ -43,7 +43,7 @@ const Missions = ({ members }) => {
     setNewTask({
       ...newTask,
       employee: e.target.value,
-      employeeRole: selectedMember.role
+      employeeRole: selectedMember ? selectedMember.role : ''
     });
   };
 
@@ -105,10 +105,7 @@ const Missions = ({ members }) => {
               </Select>
             </FormControl>
             <TextField margin="dense" name="facility" label="Tesis Adı" fullWidth value={newTask.facility} onChange={handleTaskChange} />
-            <FormControlLabel
-              control={<Checkbox checked={newTask.completed} onChange={(e) => setNewTask({ ...newTask, completed: e.target.checked })} />}
-              label="Tamamlandı"
-            />
+            
           </DialogContent>
           <DialogActions>
             <Button onClick={handleCloseTaskDialog} color="primary">
@@ -125,6 +122,12 @@ const Missions = ({ members }) => {
             <Grid item xs={12} sm={6} md={4} key={task.id}>
               <Card>
                 <CardContent style={{ position: 'relative' }}>
+                  <IconButton 
+                    style={{ position: 'absolute', top: 0, right: 0 }}
+                    onClick={() => handleDeleteTask(task.id)}
+                  >
+                    <Delete />
+                  </IconButton>
                   <Typography variant="h6" style={{ marginTop: '10px', textAlign: 'center' }}>
                     {task.taskName}
                   </Typography>
@@ -152,6 +155,11 @@ const Missions = ({ members }) => {
                         <Typography variant="body2" color="textSecondary"><strong>Durum:</strong></Typography>
                       </Grid>
                       <Grid item xs={8} style={{ textAlign: 'left' }}>
+                        <Typography variant="body2" color="textSecondary">
+                          {task.completed ? 'Yapıldı' : 'Yapılıyor/Yapılacak'}
+                        </Typography>
+                      </Grid>
+                      <Grid item xs={12} style={{ textAlign: 'center', position: 'absolute',  right: '0', marginTop: '72px' }}>
                         <Checkbox
                           checked={task.completed}
                           onChange={() => handleToggleTaskCompletion(task.id)}
@@ -161,12 +169,6 @@ const Missions = ({ members }) => {
                       </Grid>
                     </Grid>
                   </Box>
-                  <IconButton 
-                    style={{ position: 'absolute', top: 0, right: 0 }}
-                    onClick={() => handleDeleteTask(task.id)}
-                  >
-                    <Delete />
-                  </IconButton>
                 </CardContent>
               </Card>
             </Grid>
