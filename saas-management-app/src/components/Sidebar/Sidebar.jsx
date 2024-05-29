@@ -15,10 +15,7 @@ import { Link} from 'react-router-dom';
 import Exit from '../Exit/Exit';
 
 
-
 const Sidebar = () => {
-
-  
 
   return (
     <Drawer
