@@ -10,6 +10,7 @@ import Team from './components/Team/Team.jsx';
 import Facilities from './components/Facilities/Facilities.jsx';
 import Missions from './components/Missions/Missions.jsx';
 import Exit from './components/Exit/Exit.jsx';
+import Product from './components/Product/Product.jsx';
 
 function App() {
   const [formType, setFormType] = useState('login');
@@ -48,6 +49,7 @@ function App() {
                 <Route path='/team' element={<Team members={members} setMembers={setMembers} />} />
                 <Route path='/facilities' element={<Facilities />} />
                 <Route path='/missions' element={<Missions members={members} />} />
+                <Route path='/production-tracking' element={<Product />} />
                 <Route path='/exit' element={<Exit />} />
               </Routes>
             </Box>
