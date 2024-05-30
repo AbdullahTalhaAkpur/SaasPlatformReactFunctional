@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
-import { Box, Button, TextField, Dialog, DialogActions, DialogContent, DialogTitle } from '@mui/material';
+import { Box, Button, TextField, Dialog, DialogActions, DialogContent, DialogTitle, Card, CardContent, Typography, CardActions, List } from '@mui/material';
 import { Add } from '@mui/icons-material';
 
 const Product = ({ productions, setProductions }) => {
-
   const [open, setOpen] = useState(false);
   const [formData, setFormData] = useState({
     company: '',
@@ -112,8 +111,34 @@ const Product = ({ productions, setProductions }) => {
           </Button>
         </DialogActions>
       </Dialog>
+      <Box sx={{ mt: 4 }}>
+        <Typography variant="h6" gutterBottom>Ürün Listesi</Typography>
+        <List sx={{ display: 'flex', flexWrap: 'wrap', gap: 2 }}>
+          {productions.map((production) => (
+            <Card key={production.id} sx={{ width: 300, mb: 2 }}>
+              <CardContent>
+                <Typography variant="h6" component="div">
+                  Şirket: {production.company}
+                </Typography>
+                <Typography sx={{ mb: 1.5 }} color="text.secondary">
+                  Ürün Türü: {production.productType}
+                </Typography>
+                <Typography variant="body2">
+                  Kamera Kodu: {production.cameraCode}<br />
+                  Tesis: {production.facility}<br />
+                  İlk Ürün Sayısı: {production.initialProductCount}<br />
+                  Son Ürün Sayısı: {production.finalProductCount}
+                </Typography>
+              </CardContent>
+              <CardActions>
+                <Button size="small">Detaylar</Button>
+              </CardActions>
+            </Card>
+          ))}
+        </List>
+      </Box>
     </div>
-  )
-}
+  );
+};
 
 export default Product;

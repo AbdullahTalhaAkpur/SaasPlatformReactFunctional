@@ -20,6 +20,15 @@ function App() {
     return savedMembers || [];
   });
 
+  const [productions, setProductions] = useState(() => {
+    const savedProductions = JSON.parse(localStorage.getItem('productions'));
+    return savedProductions || [];
+  });
+
+  useEffect(() => {
+    localStorage.setItem('productions', JSON.stringify(productions));
+  }, [productions]);
+
   useEffect(() => {
     localStorage.setItem('members', JSON.stringify(members));
   }, [members]);
@@ -50,7 +59,7 @@ function App() {
                 <Route path='/team' element={<Team members={members} setMembers={setMembers} />} />
                 <Route path='/facilities' element={<Facilities />} />
                 <Route path='/missions' element={<Missions members={members} />} />
-                <Route path='/production-tracking' element={<Product />} />
+                <Route path='/production-tracking' element={<Product productions={productions} setProductions={setProductions} />} />
                 <Route path='/graphs' element={<Graphs />} />
                 <Route path='/exit' element={<Exit />} />
               </Routes>
