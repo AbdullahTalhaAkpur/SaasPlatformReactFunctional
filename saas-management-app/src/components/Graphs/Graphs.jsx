@@ -30,9 +30,19 @@ const Graphs = () => {
       <div className="chart">
         <h3>MARUL GÖBEKLİ</h3>
         <ResponsiveContainer width="100%" height={300}>
-          <LineChart data={lineChartData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
+          <LineChart data={lineChartData} margin={{ top: 20, right: 30, left: 20, bottom: 40 }}>
             <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="time" label={{ value: 'Zaman', position: 'insideBottomRight', offset: -5 }} />
+            <XAxis
+              dataKey="time"
+              label={{
+                value: 'Zaman',
+                position: 'insideBottomRight',
+                offset: 10, // Adjusted offset value
+                textAnchor: 'middle', // Center the label horizontally
+                dy: 20, // Vertical offset
+              }}
+              className='time'
+            />
             <YAxis label={{ value: 'Büyüklük', angle: -90, position: 'insideLeft' }} />
             <Tooltip />
             <Legend verticalAlign="top" height={36} />
@@ -43,9 +53,19 @@ const Graphs = () => {
       <div className="chart">
         <h3>MARUL GÖBEKLİ</h3>
         <ResponsiveContainer width="100%" height={300}>
-          <BarChart data={barChartData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
+          <BarChart data={barChartData} margin={{ top: 20, right: 30, left: 20, bottom: 40 }}>
             <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="time" label={{ value: 'Zaman', position: 'insideBottomRight', offset: -5 }} />
+            <XAxis
+              dataKey="time"
+              label={{
+                value: 'Zaman',
+                position: 'insideBottomRight',
+                offset: 10, // Adjusted offset value
+                textAnchor: 'middle', // Center the label horizontally
+                dy: 20, // Vertical offset
+              }}
+              className='time'
+            />
             <YAxis label={{ value: 'Büyüklük', angle: -90, position: 'insideLeft' }} />
             <Tooltip />
             <Legend verticalAlign="top" height={36} />
