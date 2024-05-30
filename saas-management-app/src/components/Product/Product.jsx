@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Box, Button, TextField, Dialog, DialogActions, DialogContent, DialogTitle, Card, CardContent, Typography, CardActions, List } from '@mui/material';
-import { Add } from '@mui/icons-material';
+import { Box, Button, TextField, Dialog, DialogActions, DialogContent, DialogTitle, Card, CardContent, Typography, IconButton, List } from '@mui/material';
+import { Add, Delete } from '@mui/icons-material';
 
 const Product = ({ productions, setProductions }) => {
   const [open, setOpen] = useState(false);
@@ -40,6 +40,10 @@ const Product = ({ productions, setProductions }) => {
       finalProductCount: ''
     });
     setOpen(false);
+  };
+
+  const handleDelete = (id) => {
+    setProductions(productions.filter(production => production.id !== id));
   };
 
   return (
@@ -115,7 +119,15 @@ const Product = ({ productions, setProductions }) => {
         <Typography variant="h6" gutterBottom>Ürün Listesi</Typography>
         <List sx={{ display: 'flex', flexWrap: 'wrap', gap: 2 }}>
           {productions.map((production) => (
-            <Card key={production.id} sx={{ width: 300, mb: 2 }}>
+            <Card key={production.id} sx={{ width: 300, mb: 2, position: 'relative' }}>
+              <IconButton
+                aria-label="delete"
+                size="small"
+                sx={{ position: 'absolute', top: 0, right: 0 }}
+                onClick={() => handleDelete(production.id)}
+              >
+                <Delete />
+              </IconButton>
               <CardContent>
                 <Typography variant="h6" component="div">
                   Şirket: {production.company}
@@ -130,9 +142,6 @@ const Product = ({ productions, setProductions }) => {
                   Son Ürün Sayısı: {production.finalProductCount}
                 </Typography>
               </CardContent>
-              <CardActions>
-                <Button size="small">Detaylar</Button>
-              </CardActions>
             </Card>
           ))}
         </List>
