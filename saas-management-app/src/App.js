@@ -12,6 +12,8 @@ import Missions from './components/Missions/Missions.jsx';
 import Exit from './components/Exit/Exit.jsx';
 import Product from './components/Product/Product.jsx';
 import Graphs from './components/Graphs/Graphs.jsx';
+import Settings from './components/Settings/Settings.jsx';
+
 
 function App() {
   const [formType, setFormType] = useState('login');
@@ -61,6 +63,7 @@ function App() {
                 <Route path='/missions' element={<Missions members={members} />} />
                 <Route path='/production-tracking' element={<Product productions={productions} setProductions={setProductions} />} />
                 <Route path='/graphs' element={<Graphs />} />
+                <Route path='/settings' element={<Settings />} />
                 <Route path='/exit' element={<Exit />} />
               </Routes>
             </Box>

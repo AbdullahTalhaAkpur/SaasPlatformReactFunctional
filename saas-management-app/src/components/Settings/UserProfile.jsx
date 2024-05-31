@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Card, CardContent, CardHeader, Avatar, Typography, TextField, Button, Box } from '@mui/material';
+import { Card, CardContent, CardHeader, Avatar,  TextField, Button, Box } from '@mui/material';
 import { PhotoCamera } from '@mui/icons-material';
 
 const UserProfile = () => {
