@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Card, CardContent, CardHeader, Avatar,  TextField, Button, Box } from '@mui/material';
+import { Card, CardContent, CardHeader, Avatar, TextField, Button, Box } from '@mui/material';
 import { PhotoCamera } from '@mui/icons-material';
+
 
 const UserProfile = () => {
   const [formData, setFormData] = useState({
@@ -30,14 +31,14 @@ const UserProfile = () => {
   };
 
   return (
-    <Card sx={{ maxWidth: 345, margin: 'auto', mt: 4 }}>
+    <Card className="profile-card">
       <CardHeader
         avatar={
-          <Avatar src={formData.profilePicture} sx={{ width: 56, height: 56 }}>
+          <Avatar src={formData.profilePicture} className="profile-avatar">
             {formData.firstName[0]}
           </Avatar>
         }
-        title="Kullanıcı Profili"
+        className="profile-header"
       />
       <CardContent>
         <Box component="form" sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>

@@ -1,7 +1,34 @@
 .settings-container {
           display: flex;
-          flex-direction: column;
+          flex-direction: row;
           align-items: center;
           gap: 20px;
           padding: 20px;
+        }        
+
+        .profile-card {
+          width: 345px;
+          height: 500px; /* Adjust height as needed */
+          margin: auto;
+          margin-top: 4;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+        }
+        
+        .profile-header {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+        }
+        
+        .profile-avatar {
+          width: 100px;
+          height: 100px;
+          margin-top: 10px;
+          margin-bottom: 16px;
+          border: 2px solid white;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }        

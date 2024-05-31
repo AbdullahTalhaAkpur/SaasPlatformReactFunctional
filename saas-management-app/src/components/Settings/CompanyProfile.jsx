@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Card, CardContent, CardHeader, Avatar,  TextField, Button, Box } from '@mui/material';
+import { Card, CardContent, CardHeader, Avatar, TextField, Button, Box } from '@mui/material';
 import { PhotoCamera } from '@mui/icons-material';
 
 const CompanyProfile = () => {
@@ -29,14 +29,15 @@ const CompanyProfile = () => {
   };
 
   return (
-    <Card sx={{ maxWidth: 345, margin: 'auto', mt: 4 }}>
+    <Card className="profile-card">
       <CardHeader
         avatar={
-          <Avatar src={formData.companyLogo} sx={{ width: 56, height: 56 }}>
+          <Avatar src={formData.companyLogo} className="profile-avatar">
             {formData.companyName[0]}
           </Avatar>
         }
         title="Şirket Profili"
+        className="profile-header"
       />
       <CardContent>
         <Box component="form" sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
