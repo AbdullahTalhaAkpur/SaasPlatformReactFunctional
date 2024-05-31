@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Card, CardContent, CardHeader, Avatar, TextField, Button, Box } from '@mui/material';
+import { Card, CardContent, CardHeader, TextField, Button, Box } from '@mui/material';
 import { PhotoCamera } from '@mui/icons-material';
+import './CompanyProfile.css'; // Import the CSS file
 
 const CompanyProfile = () => {
   const [formData, setFormData] = useState({
@@ -31,16 +32,14 @@ const CompanyProfile = () => {
   return (
     <Card className="profile-card">
       <CardHeader
-        avatar={
-          <Avatar src={formData.companyLogo} className="profile-avatar">
-            {formData.companyName[0]}
-          </Avatar>
-        }
         title="Şirket Profili"
         className="profile-header"
       />
       <CardContent>
-        <Box component="form" sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
+        <Box component="form" sx={{ display: 'flex', flexDirection: 'column', gap: 2, alignItems: 'center' }}>
+          {formData.companyLogo && (
+            <img src={formData.companyLogo} alt="Company Logo" className="company-logo" />
+          )}
           <TextField
             name="companyName"
             label="Şirket Adı"
