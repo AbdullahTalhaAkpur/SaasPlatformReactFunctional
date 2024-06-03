@@ -1,26 +1,16 @@
 .profile-card {
-          width: 345px;
-          height: 500px; /* Adjust height as needed */
+          max-width: 400px;
           margin: auto;
-          margin-top: 4;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
         }
         
         .profile-header {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
+          text-align: center;
         }
-
-        .profile-avatar {
-          width: 100px;
-          height: 100px;
-          margin-top: 10px;
+        
+        .company-logo {
+          width: 150px;
+          height: auto;
+          object-fit: contain;
           margin-bottom: 16px;
-          border: 2px solid white;
-          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }        
+        }
+        

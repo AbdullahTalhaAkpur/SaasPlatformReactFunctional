@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Card, CardContent, CardHeader, Avatar, TextField, Button, Box } from '@mui/material';
 import { PhotoCamera } from '@mui/icons-material';
-import './userProfile.css'
+import './userProfile.css'; // Import the CSS file
 
 const UserProfile = () => {
   const [formData, setFormData] = useState({
@@ -34,7 +34,11 @@ const UserProfile = () => {
     <Card className="profile-card">
       <CardHeader
         avatar={
-          <Avatar src={formData.profilePicture} className="profile-avatar">
+          <Avatar
+            src={formData.profilePicture}
+            className="profile-avatar"
+            sx={{ width: 100, height: 100 }} // Inline styling to make the avatar larger
+          >
             {formData.firstName[0]}
           </Avatar>
         }
@@ -42,7 +46,7 @@ const UserProfile = () => {
         className="profile-header"
       />
       <CardContent>
-        <Box component="form" sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
+        <Box component="form" sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
           <TextField
             name="email"
             label="Email"
