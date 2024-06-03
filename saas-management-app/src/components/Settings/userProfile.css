@@ -1,6 +1,6 @@
 .profile-card {
-          width: 345px;
-          height: 500px; /* Adjust height as needed */
+          max-width: 400px;
+          height: auto; /* Adjust height as needed */
           margin: auto;
           margin-top: 4;
           display: flex;
@@ -15,11 +15,12 @@
           align-items: center;
           justify-content: center;
         }
-
+        
         .profile-avatar {
-          width: 100px;
-          height: 100px;
+          width: 120px; /* Increased size */
+          height: 120px; /* Increased size */
           margin-bottom: 16px;
           border: 2px solid white;
           box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }        
+        }
+        

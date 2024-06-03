@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Card, CardContent, CardHeader, TextField, Button, Box } from '@mui/material';
 import { PhotoCamera } from '@mui/icons-material';
-import './CompanyProfile.css'; // Import the CSS file
+import './companyProfile.css'; // Import the CSS file
 
 const CompanyProfile = () => {
   const [formData, setFormData] = useState({
