@@ -1,17 +1,24 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Card, CardContent, CardHeader, Avatar, TextField, Button, Box } from '@mui/material';
 import { PhotoCamera } from '@mui/icons-material';
 import './userProfile.css'; // Import the CSS file
 
 const UserProfile = () => {
-  const [formData, setFormData] = useState({
-    email: '',
-    firstName: '',
-    lastName: '',
-    department: '',
-    company: '',
-    profilePicture: ''
+  const [formData, setFormData] = useState(() => {
+    const savedData = JSON.parse(localStorage.getItem('userProfile'));
+    return savedData || {
+      email: '',
+      firstName: '',
+      lastName: '',
+      department: '',
+      company: '',
+      profilePicture: ''
+    };
   });
+
+  useEffect(() => {
+    localStorage.setItem('userProfile', JSON.stringify(formData));
+  }, [formData]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -23,10 +30,14 @@ const UserProfile = () => {
 
   const handleImageChange = (e) => {
     if (e.target.files && e.target.files[0]) {
-      setFormData({
-        ...formData,
-        profilePicture: URL.createObjectURL(e.target.files[0])
-      });
+      const reader = new FileReader();
+      reader.onload = (event) => {
+        setFormData({
+          ...formData,
+          profilePicture: event.target.result
+        });
+      };
+      reader.readAsDataURL(e.target.files[0]);
     }
   };
 
@@ -34,11 +45,7 @@ const UserProfile = () => {
     <Card className="profile-card">
       <CardHeader
         avatar={
-          <Avatar
-            src={formData.profilePicture}
-            className="profile-avatar"
-            sx={{ width: 100, height: 100 }} // Inline styling to make the avatar larger
-          >
+          <Avatar src={formData.profilePicture} className="profile-avatar">
             {formData.firstName[0]}
           </Avatar>
         }

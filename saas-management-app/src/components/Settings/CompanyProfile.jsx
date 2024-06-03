@@ -1,16 +1,23 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Card, CardContent, CardHeader, TextField, Button, Box } from '@mui/material';
 import { PhotoCamera } from '@mui/icons-material';
 import './companyProfile.css'; // Import the CSS file
 
 const CompanyProfile = () => {
-  const [formData, setFormData] = useState({
-    companyName: '',
-    companyEmail: '',
-    companyAddress: '',
-    companyPhone: '',
-    companyLogo: ''
+  const [formData, setFormData] = useState(() => {
+    const savedData = JSON.parse(localStorage.getItem('companyProfile'));
+    return savedData || {
+      companyName: '',
+      companyEmail: '',
+      companyAddress: '',
+      companyPhone: '',
+      companyLogo: ''
+    };
   });
+
+  useEffect(() => {
+    localStorage.setItem('companyProfile', JSON.stringify(formData));
+  }, [formData]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -22,10 +29,14 @@ const CompanyProfile = () => {
 
   const handleImageChange = (e) => {
     if (e.target.files && e.target.files[0]) {
-      setFormData({
-        ...formData,
-        companyLogo: URL.createObjectURL(e.target.files[0])
-      });
+      const reader = new FileReader();
+      reader.onload = (event) => {
+        setFormData({
+          ...formData,
+          companyLogo: event.target.result
+        });
+      };
+      reader.readAsDataURL(e.target.files[0]);
     }
   };
 
