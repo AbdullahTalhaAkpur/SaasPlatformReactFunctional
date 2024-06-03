@@ -17,8 +17,8 @@
         }
         
         .profile-avatar {
-          width: 120px; /* Increased size */
-          height: 120px; /* Increased size */
+          width: 150px; /* Increased size */
+          height: 150px; /* Increased size */
           margin-bottom: 16px;
           border: 2px solid white;
           box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
