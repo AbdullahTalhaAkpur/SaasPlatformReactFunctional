@@ -45,7 +45,7 @@ const UserProfile = () => {
     <Card className="profile-card">
       <CardHeader
         avatar={
-          <Avatar src={formData.profilePicture}
+          <Avatar src={formData.profilePicture} 
           sx={{ width: 150, height: 150 }}
           className="profile-avatar">
             {formData.firstName[0]}

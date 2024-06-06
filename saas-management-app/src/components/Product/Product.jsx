@@ -130,10 +130,10 @@ const Product = ({ productions, setProductions }) => {
               </IconButton>
               <CardContent>
                 <Typography variant="h6" component="div">
-                  Şirket: {production.company}
+                  Ürün Türü:  {production.productType}
                 </Typography>
-                <Typography sx={{ mb: 1.5 }} color="text.secondary">
-                  Ürün Türü: {production.productType}
+                <Typography  sx={{ mb: 1.5 }} color="text">
+                   Şirket: {production.company}
                 </Typography>
                 <Typography variant="body2">
                   Kamera Kodu: {production.cameraCode}<br />
