@@ -1,6 +1,6 @@
 .chatbot {
           display: flex;
-          flex-direction: column;
+          flex-direction: column-reverse;
           height: 400px;
           border: 1px solid #ccc;
           padding: 10px;

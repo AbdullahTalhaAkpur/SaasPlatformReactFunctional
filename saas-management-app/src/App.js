@@ -28,6 +28,8 @@ function App() {
     return savedProductions || [];
   });
 
+  
+
   useEffect(() => {
     localStorage.setItem('productions', JSON.stringify(productions));
   }, [productions]);
@@ -64,7 +66,7 @@ function App() {
                 <Route path='/missions' element={<Missions members={members} />} />
                 <Route path='/production-tracking' element={<Product productions={productions} setProductions={setProductions} />} />
                 <Route path='/graphs' element={<Graphs />} />
-                <Route path='/chatbot' element={<Chatbot /> } />
+                <Route path='/chatbot' element={<Chatbot  /> } />
                 <Route path='/settings' element={<Settings />} />
                 <Route path='/exit' element={<Exit />} />
               </Routes>

@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Box, TextField, Button, List, ListItem, ListItemText } from '@mui/material';
 import './chatbot.css';
 
 const Chatbot = ({ getResponse }) => {
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState('');
+  const messagesEndRef = useRef(null);
 
   const handleSend = async () => {
     if (input.trim() !== '') {
@@ -18,6 +19,12 @@ const Chatbot = ({ getResponse }) => {
     }
   };
 
+  useEffect(() => {
+    if (messagesEndRef.current) {
+      messagesEndRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, [messages]);
+
   return (
     <Box className="chatbot">
       <List className="message-list">
@@ -26,13 +33,14 @@ const Chatbot = ({ getResponse }) => {
             <ListItemText primary={message.text} />
           </ListItem>
         ))}
+        <div ref={messagesEndRef} />
       </List>
       <Box className="input-box">
         <TextField
           value={input}
           onChange={(e) => setInput(e.target.value)}
           fullWidth
-          placeholder="Ask something about plant"
+          placeholder="Type a message..."
         />
         <Button variant="contained" color="primary" onClick={handleSend}>
           Send
