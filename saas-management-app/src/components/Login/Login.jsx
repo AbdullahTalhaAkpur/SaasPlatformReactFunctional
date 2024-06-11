@@ -31,6 +31,7 @@ const Login = ({ onSwitchForm }) => {
           <input onChange={(e) => setPassword(e.target.value)} type="password" id="password" name="password" />
           <button type="submit">Login</button>
           <p>Dont have an account ? <a className='registerlink' href='#register' onClick={() => onSwitchForm('register')}>Register</a></p>
+          <a className='registerlink' href='#forgotpassword' onClick={() => navigate('/forgot-password')}>Forgot Password?</a>
        </form>
          </div>
         </div>

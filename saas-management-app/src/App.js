@@ -14,6 +14,7 @@ import Product from './components/Product/Product.jsx';
 import Graphs from './components/Graphs/Graphs.jsx';
 import Settings from './components/Settings/Settings.jsx';
 import Chatbot from './components/Chatbot/Chatbot';
+import ForgotPassword from './components/ForgotPassword/ForgotPassword.jsx';
 
 function App() {
   const [formType, setFormType] = useState('login');
@@ -50,6 +51,7 @@ function App() {
               : <Register onSwitchForm={handleSwitchForm} />}
           </div>
         } />
+        <Route path='/forgot-password' element={<ForgotPassword />} />
         <Route path="/dashboard/*" element={
           <Box sx={{ display: 'flex' }}>
             <Header />
