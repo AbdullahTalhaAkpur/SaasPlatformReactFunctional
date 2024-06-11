@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
-import './team.css'
-import { Box, Button, Card, CardContent, Grid, TextField, Typography, Dialog, DialogActions, DialogContent, DialogTitle, Input, Avatar, IconButton, MenuItem, Select, FormControl, InputLabel } from '@mui/material'
-import { Add, Delete } from '@mui/icons-material'
+import React, { useState } from 'react';
+import './team.css';
+import { Box, Button, Card, CardContent, Grid, TextField, Typography, Dialog, DialogActions, DialogContent, DialogTitle, Input, Avatar, IconButton, MenuItem, Select, FormControl, InputLabel } from '@mui/material';
+import { Add, Delete } from '@mui/icons-material';
 
 const Team = ({ members, setMembers }) => {
   const [open, setOpen] = useState(false);
@@ -17,30 +17,38 @@ const Team = ({ members, setMembers }) => {
 
   const handleClickOpen = () => {
     setOpen(true);
-  }
+  };
 
   const handleClose = () => {
     setOpen(false);
-  }
+  };
 
   const handleChange = (e) => {
     setNewMember({
       ...newMember,
       [e.target.name]: e.target.value
     });
-  }
+  };
 
   const handleFileChange = (e) => {
-    setNewMember({
-      ...newMember,
-      picture: e.target.files[0] ? URL.createObjectURL(e.target.files[0]) : null
-    });
-  }
+    const file = e.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setNewMember({
+          ...newMember,
+          picture: reader.result // Base64 string
+        });
+      };
+      reader.readAsDataURL(file);
+    }
+  };
 
   const handleAddMember = () => {
     const newId = members.length ? members[members.length - 1].id + 1 : 1;
     const updatedMembers = [...members, { ...newMember, id: newId }];
     setMembers(updatedMembers);
+    localStorage.setItem('members', JSON.stringify(updatedMembers));
     setNewMember({
       firstName: '',
       lastName: '',
@@ -51,12 +59,13 @@ const Team = ({ members, setMembers }) => {
       picture: null
     });
     setOpen(false);
-  }
+  };
 
   const handleDeleteMember = (id) => {
     const updatedMembers = members.filter(member => member.id !== id);
     setMembers(updatedMembers);
-  }
+    localStorage.setItem('members', JSON.stringify(updatedMembers));
+  };
 
   return (
     <div>
@@ -157,7 +166,7 @@ const Team = ({ members, setMembers }) => {
         </Grid>
       </Box>
     </div>
-  )
-}
+  );
+};
 
-export default Team
+export default Team;

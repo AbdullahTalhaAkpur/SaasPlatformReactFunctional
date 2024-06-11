@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Box, TextField, Button, List, ListItem, ListItemText } from '@mui/material';
 import './chatbot.css';
 
-const Chatbot = ({ getResponse }) => {
+const Chatbot = () => {
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState('');
   const messagesEndRef = useRef(null);
@@ -12,7 +12,7 @@ const Chatbot = ({ getResponse }) => {
       const userMessage = { sender: 'user', text: input };
       setMessages([...messages, userMessage]);
 
-      const response = await getResponse(input);
+      const response = await (input);
       const botMessage = { sender: 'bot', text: response };
       setMessages((prevMessages) => [...prevMessages, botMessage]);
       setInput('');
