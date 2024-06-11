@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { Box, Button, TextField, Dialog, DialogActions, DialogContent, DialogTitle, Typography } from '@mui/material';
-import { Add } from '@mui/icons-material';
+import { Box, Button, TextField, Dialog, DialogActions, DialogContent, DialogTitle, Card, CardContent, Typography, IconButton, List } from '@mui/material';
+import { Add, Delete } from '@mui/icons-material';
 
-const Product = ({ productions = [], setProductions }) => {
+const Product = ({ productions, setProductions }) => {
   const [open, setOpen] = useState(false);
   const [formData, setFormData] = useState({
     company: '',
@@ -30,10 +30,7 @@ const Product = ({ productions = [], setProductions }) => {
   };
 
   const handleSubmit = () => {
-    const newId = productions.length ? productions[productions.length - 1].id + 1 : 1;
-    const updatedProductions = [...productions, { ...formData, id: newId }];
-    setProductions(updatedProductions);
-    localStorage.setItem('productions', JSON.stringify(updatedProductions));
+    setProductions([...productions, { ...formData, id: productions.length + 1 }]);
     setFormData({
       company: '',
       cameraCode: '',
@@ -43,6 +40,10 @@ const Product = ({ productions = [], setProductions }) => {
       finalProductCount: ''
     });
     setOpen(false);
+  };
+
+  const handleDelete = (id) => {
+    setProductions(productions.filter(production => production.id !== id));
   };
 
   return (
@@ -114,20 +115,37 @@ const Product = ({ productions = [], setProductions }) => {
           </Button>
         </DialogActions>
       </Dialog>
-      {productions.length ? (
-        productions.map((production) => (
-          <Box key={production.id} sx={{ mt: 2, p: 2, border: '1px solid #ccc', borderRadius: '8px' }}>
-            <Typography variant="h6">{production.company}</Typography>
-            <Typography>Kamera Kodu: {production.cameraCode}</Typography>
-            <Typography>Ürün Türü: {production.productType}</Typography>
-            <Typography>Tesis: {production.facility}</Typography>
-            <Typography>İlk Ürün Sayısı: {production.initialProductCount}</Typography>
-            <Typography>Son Ürün Sayısı: {production.finalProductCount}</Typography>
-          </Box>
-        ))
-      ) : (
-        <Typography sx={{ mt: 2 }}>No productions available.</Typography>
-      )}
+      <Box sx={{ mt: 4 }}>
+        <Typography variant="h6" gutterBottom>Ürün Listesi</Typography>
+        <List sx={{ display: 'flex', flexWrap: 'wrap', gap: 2 }}>
+          {productions.map((production) => (
+            <Card key={production.id} sx={{ width: 300, mb: 2, position: 'relative' }}>
+              <IconButton
+                aria-label="delete"
+                size="small"
+                sx={{ position: 'absolute', top: 0, right: 0 }}
+                onClick={() => handleDelete(production.id)}
+              >
+                <Delete />
+              </IconButton>
+              <CardContent>
+                <Typography variant="h6" component="div">
+                  Ürün Türü:  {production.productType}
+                </Typography>
+                <Typography  sx={{ mb: 1.5 }} color="text">
+                   Şirket: {production.company}
+                </Typography>
+                <Typography variant="body2">
+                  Kamera Kodu: {production.cameraCode}<br />
+                  Tesis: {production.facility}<br />
+                  İlk Ürün Sayısı: {production.initialProductCount}<br />
+                  Son Ürün Sayısı: {production.finalProductCount}
+                </Typography>
+              </CardContent>
+            </Card>
+          ))}
+        </List>
+      </Box>
     </div>
   );
 };

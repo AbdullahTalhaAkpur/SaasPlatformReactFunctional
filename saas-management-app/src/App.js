@@ -14,7 +14,7 @@ import Product from './components/Product/Product.jsx';
 import Graphs from './components/Graphs/Graphs.jsx';
 import Settings from './components/Settings/Settings.jsx';
 import Chatbot from './components/Chatbot/Chatbot';
-import ForgotPassword from './components/ForgotPassword/ForgotPassword.jsx';
+import ForgotPassword from './components/ForgotPassword/ForgotPassword';
 
 function App() {
   const [formType, setFormType] = useState('login');
@@ -22,11 +22,13 @@ function App() {
     const savedMembers = JSON.parse(localStorage.getItem('members'));
     return savedMembers || [];
   });
+
   const [productions, setProductions] = useState(() => {
     const savedProductions = JSON.parse(localStorage.getItem('productions'));
     return savedProductions || [];
   });
 
+  
   useEffect(() => {
     localStorage.setItem('productions', JSON.stringify(productions));
   }, [productions]);
@@ -34,6 +36,8 @@ function App() {
   useEffect(() => {
     localStorage.setItem('members', JSON.stringify(members));
   }, [members]);
+
+  
 
   const handleSwitchForm = (type) => {
     setFormType(type);
@@ -51,14 +55,14 @@ function App() {
               : <Register onSwitchForm={handleSwitchForm} />}
           </div>
         } />
-        <Route path='/forgot-password' element={<ForgotPassword />} />
+        <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/dashboard/*" element={
           <Box sx={{ display: 'flex' }}>
             <Header />
             <Sidebar />
             <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
               <Toolbar />
-              <Routes >
+              <Routes>
                 <Route path='/home' element={<Dashboard />} />
                 <Route path='/team' element={<Team members={members} setMembers={setMembers} />} />
                 <Route path='/facilities' element={<Facilities />} />
