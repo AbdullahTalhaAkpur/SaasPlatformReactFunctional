@@ -13,6 +13,7 @@
     "boo": "^2.0.0",
     "formik": "^2.4.6",
     "mdb-react-ui-kit": "^8.0.0",
+    "pdfjs-dist": "^4.3.136",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.23.1",

@@ -15,20 +15,16 @@ import Graphs from './components/Graphs/Graphs.jsx';
 import Settings from './components/Settings/Settings.jsx';
 import Chatbot from './components/Chatbot/Chatbot';
 
-
 function App() {
   const [formType, setFormType] = useState('login');
   const [members, setMembers] = useState(() => {
     const savedMembers = JSON.parse(localStorage.getItem('members'));
     return savedMembers || [];
   });
-
   const [productions, setProductions] = useState(() => {
     const savedProductions = JSON.parse(localStorage.getItem('productions'));
     return savedProductions || [];
   });
-
-  
 
   useEffect(() => {
     localStorage.setItem('productions', JSON.stringify(productions));
@@ -41,6 +37,7 @@ function App() {
   const handleSwitchForm = (type) => {
     setFormType(type);
   };
+
 
   return (
     <BrowserRouter>
@@ -66,7 +63,7 @@ function App() {
                 <Route path='/missions' element={<Missions members={members} />} />
                 <Route path='/production-tracking' element={<Product productions={productions} setProductions={setProductions} />} />
                 <Route path='/graphs' element={<Graphs />} />
-                <Route path='/chatbot' element={<Chatbot  /> } />
+                <Route path='/chatbot' element={<Chatbot />} />
                 <Route path='/settings' element={<Settings />} />
                 <Route path='/exit' element={<Exit />} />
               </Routes>
