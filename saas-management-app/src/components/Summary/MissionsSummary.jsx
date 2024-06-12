@@ -10,8 +10,10 @@ const MissionsSummary = ({ missions = [] }) => {
           <Grid item xs={12} sm={6} md={4} key={mission.id}>
             <Card>
               <CardContent>
-                <Typography variant="h6">{mission.name}</Typography>
-                <Typography variant="body2">{mission.description}</Typography>
+                <Typography variant="h6">{mission.taskName}</Typography>
+                <Typography variant="body2">{`Çalışan: ${mission.employee}`}</Typography>
+                <Typography variant="body2">{`Tesis: ${mission.facility}`}</Typography>
+                <Typography variant="body2">{`Durum: ${mission.completed ? 'Yapıldı' : 'Yapılıyor/Yapılacak'}`}</Typography>
               </CardContent>
             </Card>
           </Grid>

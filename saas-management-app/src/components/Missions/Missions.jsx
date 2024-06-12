@@ -3,7 +3,7 @@ import './mission.css';
 import { Box, Button, Card, CardContent, Grid, TextField, Typography, Dialog, DialogActions, DialogContent, DialogTitle, IconButton, MenuItem, Select, FormControl, InputLabel, Checkbox } from '@mui/material';
 import { Add, Delete, CheckBoxOutlineBlank, CheckBox } from '@mui/icons-material';
 
-const Missions = ({ members }) => {
+const Missions = ({ members = [], missions = [], setMissions }) => {
   const [tasks, setTasks] = useState(() => {
     const savedTasks = JSON.parse(localStorage.getItem('tasks'));
     return savedTasks || [];
@@ -51,6 +51,7 @@ const Missions = ({ members }) => {
     const newId = tasks.length ? tasks[tasks.length - 1].id + 1 : 1;
     const updatedTasks = [...tasks, { ...newTask, id: newId }];
     setTasks(updatedTasks);
+    setMissions(updatedTasks); // Update parent state
     setNewTask({
       taskName: '',
       employee: '',
@@ -64,6 +65,7 @@ const Missions = ({ members }) => {
   const handleDeleteTask = (id) => {
     const updatedTasks = tasks.filter(task => task.id !== id);
     setTasks(updatedTasks);
+    setMissions(updatedTasks); // Update parent state
   };
 
   const handleToggleTaskCompletion = (id) => {
@@ -74,6 +76,7 @@ const Missions = ({ members }) => {
       return task;
     });
     setTasks(updatedTasks);
+    setMissions(updatedTasks); // Update parent state
   };
 
   return (
@@ -118,61 +121,67 @@ const Missions = ({ members }) => {
         </Dialog>
 
         <Grid container spacing={2} mt={2}>
-          {tasks.map(task => (
-            <Grid item xs={12} sm={6} md={4} key={task.id}>
-              <Card>
-                <CardContent style={{ position: 'relative' }}>
-                  <IconButton 
-                    style={{ position: 'absolute', top: 0, right: 0 }}
-                    onClick={() => handleDeleteTask(task.id)}
-                  >
-                    <Delete />
-                  </IconButton>
-                  <Typography variant="h6" style={{ marginTop: '10px', textAlign: 'center' }}>
-                    {task.taskName}
-                  </Typography>
-                  <Box mt={2}>
-                    <Grid container spacing={1}>
-                      <Grid item xs={4} style={{ textAlign: 'left' }}>
-                        <Typography variant="body2" color="textSecondary"><strong>Çalışan:</strong></Typography>
+          {tasks.length > 0 ? (
+            tasks.map(task => (
+              <Grid item xs={12} sm={6} md={4} key={task.id}>
+                <Card>
+                  <CardContent style={{ position: 'relative' }}>
+                    <IconButton 
+                      style={{ position: 'absolute', top: 0, right: 0 }}
+                      onClick={() => handleDeleteTask(task.id)}
+                    >
+                      <Delete />
+                    </IconButton>
+                    <Typography variant="h6" style={{ marginTop: '10px', textAlign: 'center' }}>
+                      {task.taskName}
+                    </Typography>
+                    <Box mt={2}>
+                      <Grid container spacing={1}>
+                        <Grid item xs={4} style={{ textAlign: 'left' }}>
+                          <Typography variant="body2" color="textSecondary"><strong>Çalışan:</strong></Typography>
+                        </Grid>
+                        <Grid item xs={8} style={{ textAlign: 'left' }}>
+                          <Typography variant="body2" color="textSecondary">{task.employee}</Typography>
+                        </Grid>
+                        <Grid item xs={4} style={{ textAlign: 'left' }}>
+                          <Typography variant="body2" color="textSecondary"><strong>Rol:</strong></Typography>
+                        </Grid>
+                        <Grid item xs={8} style={{ textAlign: 'left' }}>
+                          <Typography variant="body2" color="textSecondary">{task.employeeRole}</Typography>
+                        </Grid>
+                        <Grid item xs={4} style={{ textAlign: 'left' }}>
+                          <Typography variant="body2" color="textSecondary"><strong>Tesis:</strong></Typography>
+                        </Grid>
+                        <Grid item xs={8} style={{ textAlign: 'left' }}>
+                          <Typography variant="body2" color="textSecondary">{task.facility}</Typography>
+                        </Grid>
+                        <Grid item xs={4} style={{ textAlign: 'left' }}>
+                          <Typography variant="body2" color="textSecondary"><strong>Durum:</strong></Typography>
+                        </Grid>
+                        <Grid item xs={8} style={{ textAlign: 'left' }}>
+                          <Typography variant="body2" color="textSecondary">
+                            {task.completed ? 'Yapıldı' : 'Yapılıyor/Yapılacak'}
+                          </Typography>
+                        </Grid>
+                        <Grid item xs={12} style={{ textAlign: 'center', position: 'absolute',  right: '0', marginTop: '72px' }}>
+                          <Checkbox
+                            checked={task.completed}
+                            onChange={() => handleToggleTaskCompletion(task.id)}
+                            icon={<CheckBoxOutlineBlank />}
+                            checkedIcon={<CheckBox />}
+                          />
+                        </Grid>
                       </Grid>
-                      <Grid item xs={8} style={{ textAlign: 'left' }}>
-                        <Typography variant="body2" color="textSecondary">{task.employee}</Typography>
-                      </Grid>
-                      <Grid item xs={4} style={{ textAlign: 'left' }}>
-                        <Typography variant="body2" color="textSecondary"><strong>Rol:</strong></Typography>
-                      </Grid>
-                      <Grid item xs={8} style={{ textAlign: 'left' }}>
-                        <Typography variant="body2" color="textSecondary">{task.employeeRole}</Typography>
-                      </Grid>
-                      <Grid item xs={4} style={{ textAlign: 'left' }}>
-                        <Typography variant="body2" color="textSecondary"><strong>Tesis:</strong></Typography>
-                      </Grid>
-                      <Grid item xs={8} style={{ textAlign: 'left' }}>
-                        <Typography variant="body2" color="textSecondary">{task.facility}</Typography>
-                      </Grid>
-                      <Grid item xs={4} style={{ textAlign: 'left' }}>
-                        <Typography variant="body2" color="textSecondary"><strong>Durum:</strong></Typography>
-                      </Grid>
-                      <Grid item xs={8} style={{ textAlign: 'left' }}>
-                        <Typography variant="body2" color="textSecondary">
-                          {task.completed ? 'Yapıldı' : 'Yapılıyor/Yapılacak'}
-                        </Typography>
-                      </Grid>
-                      <Grid item xs={12} style={{ textAlign: 'center', position: 'absolute',  right: '0', marginTop: '72px' }}>
-                        <Checkbox
-                          checked={task.completed}
-                          onChange={() => handleToggleTaskCompletion(task.id)}
-                          icon={<CheckBoxOutlineBlank />}
-                          checkedIcon={<CheckBox />}
-                        />
-                      </Grid>
-                    </Grid>
-                  </Box>
-                </CardContent>
-              </Card>
-            </Grid>
-          ))}
+                    </Box>
+                  </CardContent>
+                </Card>
+              </Grid>
+            ))
+          ) : (
+            <Typography variant="h6" style={{ margin: 'auto', textAlign: 'center' }}>
+              No tasks available.
+            </Typography>
+          )}
         </Grid>
       </Box>
     </div>

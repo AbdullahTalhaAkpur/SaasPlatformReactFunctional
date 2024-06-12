@@ -94,9 +94,9 @@ function App() {
                 />} />
                 <Route path='/team' element={<Team members={members} setMembers={setMembers} />} />
                 <Route path='/facilities' element={<Facilities facilities={facilities} setFacilities={setFacilities} />} />
-                <Route path='/missions' element={<Missions missions={missions} />} />
+                <Route path='/missions' element={<Missions missions={missions} members={members} setMissions={setMissions} />} />
                 <Route path='/production-tracking' element={<Product productions={productions} setProductions={setProductions} />} />
-                <Route path='/graphs' element={<Graphs data={graphData} />} />
+                <Route path='/graphs' element={<Graphs data={graphData} setGraphData={setGraphData} />} />
                 <Route path='/chatbot' element={<Chatbot />} />
                 <Route path='/settings' element={<Settings />} />
                 <Route path='/exit' element={<Exit />} />
