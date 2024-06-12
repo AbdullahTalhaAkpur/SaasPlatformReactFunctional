@@ -28,7 +28,21 @@ function App() {
     return savedProductions || [];
   });
 
-  
+  const [facilities, setFacilities] = useState(() => {
+    const savedFacilities = JSON.parse(localStorage.getItem('facilities'));
+    return savedFacilities || [];
+  });
+
+  const [missions, setMissions] = useState(() => {
+    const savedMissions = JSON.parse(localStorage.getItem('missions'));
+    return savedMissions || [];
+  });
+
+  const [graphData, setGraphData] = useState(() => {
+    const savedGraphData = JSON.parse(localStorage.getItem('graphData'));
+    return savedGraphData || [];
+  });
+
   useEffect(() => {
     localStorage.setItem('productions', JSON.stringify(productions));
   }, [productions]);
@@ -37,12 +51,21 @@ function App() {
     localStorage.setItem('members', JSON.stringify(members));
   }, [members]);
 
-  
+  useEffect(() => {
+    localStorage.setItem('facilities', JSON.stringify(facilities));
+  }, [facilities]);
+
+  useEffect(() => {
+    localStorage.setItem('missions', JSON.stringify(missions));
+  }, [missions]);
+
+  useEffect(() => {
+    localStorage.setItem('graphData', JSON.stringify(graphData));
+  }, [graphData]);
 
   const handleSwitchForm = (type) => {
     setFormType(type);
   };
-
 
   return (
     <BrowserRouter>
@@ -63,12 +86,17 @@ function App() {
             <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
               <Toolbar />
               <Routes>
-                <Route path='/home' element={<Dashboard />} />
+                <Route path='/home' element={<Dashboard 
+                  facilities={facilities} 
+                  productions={productions} 
+                  missions={missions} 
+                  graphData={graphData} 
+                />} />
                 <Route path='/team' element={<Team members={members} setMembers={setMembers} />} />
-                <Route path='/facilities' element={<Facilities />} />
-                <Route path='/missions' element={<Missions members={members} />} />
+                <Route path='/facilities' element={<Facilities facilities={facilities} setFacilities={setFacilities} />} />
+                <Route path='/missions' element={<Missions missions={missions} />} />
                 <Route path='/production-tracking' element={<Product productions={productions} setProductions={setProductions} />} />
-                <Route path='/graphs' element={<Graphs />} />
+                <Route path='/graphs' element={<Graphs data={graphData} />} />
                 <Route path='/chatbot' element={<Chatbot />} />
                 <Route path='/settings' element={<Settings />} />
                 <Route path='/exit' element={<Exit />} />
