@@ -17,7 +17,7 @@ import Graphs from './components/Graphs/Graphs.jsx';
 import Settings from './components/Settings/Settings.jsx';
 import Chatbot from './components/Chatbot/Chatbot';
 import ForgotPassword from './components/ForgotPassword/ForgotPassword';
-
+import './i18n.js'
 
 function App() {
   const { t } = useTranslation();
