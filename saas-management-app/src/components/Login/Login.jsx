@@ -4,7 +4,6 @@ import logo from '../assets/agriverts-555.png'
 import { useNavigate } from 'react-router-dom'
 import { login } from '../auth/auth'
 
-
 const Login = ({ onSwitchForm }) => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
