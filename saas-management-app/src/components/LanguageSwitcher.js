@@ -1,6 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import  enFlag from  '../components/assets/eng.png'
+import trFlag from '../components/assets/türk.png'
 
 const LanguageSwitcher = () => {
   const { i18n } = useTranslation();
@@ -17,7 +18,11 @@ const LanguageSwitcher = () => {
       onClick={() => changeLanguage('en')}
       className='language-icon'
       />
-      
+      <img src={trFlag}
+      alt='Türkçe'
+      onClick={() => changeLanguage('tr')}
+      className='language-icon'
+      />
     </div>
   );
 };

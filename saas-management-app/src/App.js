@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { CssBaseline, Box, Toolbar } from '@mui/material';
 import { useTranslation } from 'react-i18next';
-import LanguageSelector from './components/LanguageSelector.js';
 import Login from './components/Login/Login';
 import Register from './components/Register/Register';
 import Dashboard from './components/Dashboard/Dashboard';
@@ -74,7 +73,6 @@ function App() {
   return (
     <BrowserRouter>
       <CssBaseline />
-      <LanguageSelector/>
       <Routes>
         <Route path="/" element={
           <div>
