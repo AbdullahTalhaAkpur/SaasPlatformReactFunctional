@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { CssBaseline, Box, Toolbar } from '@mui/material';
-import { useTranslation } from 'react-i18next';
 import Login from './components/Login/Login';
 import Register from './components/Register/Register';
 import Dashboard from './components/Dashboard/Dashboard';
@@ -19,7 +18,6 @@ import ForgotPassword from './components/ForgotPassword/ForgotPassword';
 import './i18n.js'
 
 function App() {
-  const { t } = useTranslation();
   const [formType, setFormType] = useState('login');
   const [members, setMembers] = useState(() => {
     const savedMembers = JSON.parse(localStorage.getItem('members'));

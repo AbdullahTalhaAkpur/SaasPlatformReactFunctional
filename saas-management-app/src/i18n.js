@@ -19,9 +19,6 @@ i18n
     },
   });
 
-  const savedLanguage = localStorage.getItem('language');
-  if (savedLanguage) {
-    i18n.changeLanguage(savedLanguage);
-  }
+  
 
 export default i18n;
