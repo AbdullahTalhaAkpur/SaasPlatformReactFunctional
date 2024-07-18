@@ -3,8 +3,10 @@ import './register.css'
 import logo from '../assets/agriverts-555.png';
 import { useNavigate } from 'react-router-dom'
 import { register } from '../auth/auth';
+import { useTranslation } from 'react-i18next';
 
 const Register = ({ onSwitchForm }) => {
+  const {t} = useTranslation();
   const [email, setEmail] = useState('');
   const [pass, setPass] = useState('');
   const [name, setName] = useState('');
@@ -28,9 +30,9 @@ const Register = ({ onSwitchForm }) => {
           </div>
        <div className="register-card-container">
        <div className="register-card">
-          <h2 className='register'>Register</h2>
+          <h2 className='register'>{t('Register')}</h2>
        <form onSubmit={handleSubmit}>
-          <label htmlFor="name">Full Name</label>
+          <label htmlFor="name">{t('Full Name')}</label>
           <input value={name} onChange={(e) => setName(e.target.value)} type='text' name='name' id='name' ></input>
           <label htmlFor="username">Username</label>
           <input value={username} onChange={(e) => setUsername(e.target.value)} type='text' name='username' id='username' ></input>
