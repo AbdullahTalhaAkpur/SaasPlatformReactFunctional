@@ -1,7 +1,5 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
-import LanguageDetector from 'i18next-browser-languagedetector';
-import HttpApi from 'i18next-http-backend';
 
 
 const resources = {
@@ -18,21 +16,16 @@ const resources = {
 }
 
 i18n
-  .use(HttpApi)
-  .use(LanguageDetector)
   .use(initReactI18next)
   .init({
     resources,
-    lng: "tr",
+    lng: "tr", // Default Language
     supportedLngs: ['en', 'tr'],
-    fallbackLng: 'en',
+    fallbackLng: 'tr',
     debug: true,
     interpolation: {
       escapeValue: false
-    },
-    backend: {
-      loadPath: '/saas-management-app/public/translation/translation.json'
-    },
+    }
   });
 
 export default i18n;

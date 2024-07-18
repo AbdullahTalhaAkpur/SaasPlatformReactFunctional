@@ -16,10 +16,8 @@ import Settings from './components/Settings/Settings.jsx';
 import Chatbot from './components/Chatbot/Chatbot';
 import ForgotPassword from './components/ForgotPassword/ForgotPassword';
 import './i18n.js'
-import { useTranslation } from 'react-i18next';
 
 function App() {
-  const {t, i18n} = useTranslation()
   const [formType, setFormType] = useState('login');
   const [members, setMembers] = useState(() => {
     const savedMembers = JSON.parse(localStorage.getItem('members'));
@@ -46,9 +44,7 @@ function App() {
     return savedGraphData || [];
   });
 
-  const changeLanguage = (lng) => {
-    i18n.changeLanguage(lng);
-  }
+ 
 
   useEffect(() => {
     localStorage.setItem('productions', JSON.stringify(productions));
