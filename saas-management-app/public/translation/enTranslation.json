@@ -1,10 +1,13 @@
 {
-          "Home": "Home",
-          "Team": "Team",
-          "Facilities": "Facilities",
-          "Missions": "Missions",
-          "Product tracking": "Product tracking",
-          "Graphs": "graphs",
-          "Settings": "Settings",
-          "Exit": "Exit"
+          "language": "English",
+          "screens": {
+            "login": {
+              "title": "Login",
+              "username": "Username",
+              "password": "Password",
+              "loginButton": "Login",
+              "noAccount": "Don't have an account? Register",
+              "forgotPassword": "Forgot Password?"
+             }
+         }
 }

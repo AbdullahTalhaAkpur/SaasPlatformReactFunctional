@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom'
 import { login } from '../auth/auth'
 import { useTranslation } from 'react-i18next'
 
+
 const Login = ({ onSwitchForm }) => {
     const {t} = useTranslation()
     const [username, setUsername] = useState('');
