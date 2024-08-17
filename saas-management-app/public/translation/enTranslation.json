@@ -1,13 +1,8 @@
 {
-          "language": "English",
-          "screens": {
-            "login": {
-              "title": "Login",
-              "username": "Username",
-              "password": "Password",
-              "loginButton": "Login",
-              "noAccount": "Don't have an account? Register",
-              "forgotPassword": "Forgot Password?"
-             }
-         }
+  "Login": "Login",
+  "Username": "Username",
+  "Password": "Password",
+  "Dont have an account ? ": "Don't have an account?",
+  "Register": "Register",
+  "Forgot Password?": "Forgot Password?"
 }

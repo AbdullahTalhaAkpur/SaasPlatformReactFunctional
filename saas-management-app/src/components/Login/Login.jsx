@@ -4,10 +4,10 @@ import logo from '../assets/agriverts-555.png'
 import { useNavigate } from 'react-router-dom'
 import { login } from '../auth/auth'
 import { useTranslation } from 'react-i18next'
-
+import { Select, MenuItem } from '@mui/material'
 
 const Login = ({ onSwitchForm }) => {
-    const {t} = useTranslation()
+    const {t, i18n} = useTranslation()
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const navigate = useNavigate();       
@@ -15,12 +15,27 @@ const Login = ({ onSwitchForm }) => {
     const handleSubmit = (event) => {
           event.preventDefault();
           login(username, password);
+          localStorage.setItem('language', i18n.language)
           navigate('/Dashboard', { replace: true });
+    }
+
+    const changeLanguage = (lang) => {
+      i18n.changeLanguage(lang);
+      localStorage.setItem('language', lang)
     }
 
   return (
           <div className="login-container">
           <div className='language-switcher-container'>
+            <Select
+             value={i18n.language}
+             onChange={(e) => changeLanguage(e.target.value)}
+             displayEmpty
+             inputProps={{ 'aria-label': 'Without label' }}
+            >
+              <MenuItem value="en">English</MenuItem>
+              <MenuItem value="tr">Turkish</MenuItem>
+            </Select> 
           </div>  
           <div className="logo-container">
             <img src={logo} alt="Agriverts logo" />

@@ -86,3 +86,10 @@
           font-size: 20px;
           font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
        }
+
+       .language-switcher-container {
+         position: absolute;
+         top: 20px;
+         right: 20px;
+         z-index: 1000; /* Ensure it's on top of other elements */
+     }
