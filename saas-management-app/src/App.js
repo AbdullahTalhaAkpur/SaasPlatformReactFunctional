@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { CssBaseline, Box, Toolbar } from '@mui/material';
+import { useTranslation } from 'react-i18next';
 import Login from './components/Login/Login';
 import Register from './components/Register/Register';
 import Dashboard from './components/Dashboard/Dashboard';
@@ -17,12 +18,21 @@ import Chatbot from './components/Chatbot/Chatbot';
 import ForgotPassword from './components/ForgotPassword/ForgotPassword';
 import './i18n.js'
 
+
 function App() {
+  const { i18n } = useTranslation();
   const [formType, setFormType] = useState('login');
   const [members, setMembers] = useState(() => {
     const savedMembers = JSON.parse(localStorage.getItem('members'));
     return savedMembers || [];
   });
+
+  useEffect(() => {
+    const savedLanguage = localStorage.getItem('language');
+    if (savedLanguage) {
+      i18n.changeLanguage(savedLanguage);
+    }
+  }, [i18n]);
 
   const [productions, setProductions] = useState(() => {
     const savedProductions = JSON.parse(localStorage.getItem('productions'));
@@ -43,8 +53,6 @@ function App() {
     const savedGraphData = JSON.parse(localStorage.getItem('graphData'));
     return savedGraphData || [];
   });
-
- 
 
   useEffect(() => {
     localStorage.setItem('productions', JSON.stringify(productions));

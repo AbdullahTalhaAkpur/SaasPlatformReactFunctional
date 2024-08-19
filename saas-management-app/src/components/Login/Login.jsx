@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './login.css'
 import logo from '../assets/agriverts-555.png'
 import { useNavigate } from 'react-router-dom'
@@ -11,6 +11,13 @@ const Login = ({ onSwitchForm }) => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const navigate = useNavigate();       
+
+    useEffect(() => {
+      const savedLanguage = localStorage.getItem('language');
+      if (savedLanguage) {
+        i18n.changeLanguage(savedLanguage);
+      }
+    }, [i18n]);
 
     const handleSubmit = (event) => {
           event.preventDefault();

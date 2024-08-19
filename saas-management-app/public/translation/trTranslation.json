@@ -1,13 +1,8 @@
 {
-          "language": "Turkish",
-          "screens": {
-            "login": {
-              "title": "Giriş",
-              "username": "Kullanıcı Adı",
-              "password": "Parola",
-              "loginButton": "Giriş",
-              "noAccount": "Hesabınız yok mu? Kayıt Ol",
-              "forgotPassword": "Parolanızı mı unuttunuz?"
-            }
-          }
+  "Login": "Giriş Yap",
+  "Username": "Kullanıcı Adı",
+  "Password": "Şifre",
+  "Dont have an account ? ": "Hesabınız yok mu?",
+  "Register": "Kayıt Ol",
+  "Forgot Password?": "Şifremi Unuttum?"
 }
