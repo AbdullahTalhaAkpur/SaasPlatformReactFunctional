@@ -2,8 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { Card, CardContent, CardHeader, Avatar, TextField, Button, Box } from '@mui/material';
 import { PhotoCamera } from '@mui/icons-material';
 import './userProfile.css'; // Import the CSS file
+import { useTranslation } from 'react-i18next';
 
 const UserProfile = () => {
+  const {t} = useTranslation();
   const [formData, setFormData] = useState(() => {
     const savedData = JSON.parse(localStorage.getItem('userProfile'));
     return savedData || {
@@ -51,42 +53,42 @@ const UserProfile = () => {
             {formData.firstName[0]}
           </Avatar>
         }
-        title="Kullanıcı Profili"
+        title={t('user_profile.title')}
         className="profile-header"
       />
       <CardContent>
         <Box component="form" sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
           <TextField
             name="email"
-            label="Email"
+            label={t('user_profile.email')}
             fullWidth
             value={formData.email}
             onChange={handleChange}
           />
           <TextField
             name="firstName"
-            label="Ad"
+            label={t('user_profile.first_name')}
             fullWidth
             value={formData.firstName}
             onChange={handleChange}
           />
           <TextField
             name="lastName"
-            label="Soyad"
+            label={t('user_profile.last_name')}
             fullWidth
             value={formData.lastName}
             onChange={handleChange}
           />
           <TextField
             name="department"
-            label="Departman"
+            label={t('user_profile.department')}
             fullWidth
             value={formData.department}
             onChange={handleChange}
           />
           <TextField
             name="company"
-            label="Şirket"
+            label={t('user_profile.company')}
             fullWidth
             value={formData.company}
             onChange={handleChange}
@@ -96,7 +98,7 @@ const UserProfile = () => {
             component="label"
             startIcon={<PhotoCamera />}
           >
-            Profil Resmi Yükle
+            {t('user_profile.upload_profile_picture')}
             <input
               type="file"
               hidden

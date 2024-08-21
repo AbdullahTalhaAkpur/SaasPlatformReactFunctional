@@ -97,5 +97,22 @@
     "submit": "Submit",
     "product_list": "Product List",
     "delete": "Delete"
+  },
+  "user_profile": {
+    "title": "User Profile",
+    "email": "Email",
+    "first_name": "First Name",
+    "last_name": "Last Name",
+    "department": "Department",
+    "company": "Company",
+    "upload_profile_picture": "Upload Profile Picture"
+  },
+  "company_profile": {
+    "title": "Company Profile",
+    "company_name": "Company Name",
+    "company_email": "Company Email",
+    "company_address": "Company Address",
+    "company_no": "Company No",
+    "upload_company_logo": "Upload Company Logo"
   }
 }

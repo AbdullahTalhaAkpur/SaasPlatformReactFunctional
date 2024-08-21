@@ -97,5 +97,22 @@
     "submit": "Ekle",
     "product_list": "Ürün Listesi",
     "delete": "Sil"
+  },
+  "user_profile": {
+    "title": "Kullanıcı Profili",
+    "email": "E-posta",
+    "first_name": "Ad",
+    "last_name": "Soyad",
+    "department": "Departman",
+    "company": "Şirket",
+    "upload_profile_picture": "Profil Resmi Yükle"
+  },
+  "company_profile": {
+    "title": "Şirket Profili",
+    "company_name": "Şirket Adı",
+    "company_email": "Şirket Email",
+    "company_address": "Şirket Adresi",
+    "company_no": "Şirket Numarası",
+    "upload_company_logo": "Şirket Profili Resmi Yükle"
   }
 }
