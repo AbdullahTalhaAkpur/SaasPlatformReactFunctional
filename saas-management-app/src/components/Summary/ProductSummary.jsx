@@ -12,10 +12,10 @@ const ProductSummary = ({ productions = [] }) => {
           <Grid item xs={12} sm={6} md={4} key={production.id}>
             <Card>
               <CardContent>
-                <Typography variant="h6">Ürün Türü: {production.productType}</Typography>
-                <Typography variant="body2">Şirket: {production.company}</Typography>
-                <Typography variant="body2">Kamera Kodu: {production.cameraCode}</Typography>
-                <Typography variant="body2">Tesis: {production.facility}</Typography>
+                <Typography variant="h6"> {t('dashboard.product_type')} : {production.productType}</Typography>
+                <Typography variant="body2">{t('dashboard.company')} : {production.company}</Typography>
+                <Typography variant="body2">{t('dashboard.camera_code')}: {production.cameraCode}</Typography>
+                <Typography variant="body2">{t('dashboard.facility')}: {production.facility}</Typography>
               </CardContent>
             </Card>
           </Grid>

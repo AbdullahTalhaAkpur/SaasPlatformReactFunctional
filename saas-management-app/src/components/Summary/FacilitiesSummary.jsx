@@ -12,9 +12,9 @@ const FacilitiesSummary = ({ facilities = [] }) => {
           <Grid item xs={12} sm={6} md={4} key={facility.id}>
             <Card>
               <CardContent>
-                <Typography variant="h6">{facility.facilityName}</Typography>
-                <Typography variant="body2">{`Adres:  ${facility.address}`}</Typography>
-                <Typography variant="body2">{`Şirket: ${facility.company}`}</Typography>
+                <Typography variant="h6">{t('dashboard.facility_name')}: {facility.facilityName}</Typography>
+                <Typography variant="body2">{t('dashboard.address')}: {facility.address}</Typography>
+                <Typography variant="body2">{t('dashboard.company')}: {facility.company}</Typography>
               </CardContent>
             </Card>
           </Grid>
