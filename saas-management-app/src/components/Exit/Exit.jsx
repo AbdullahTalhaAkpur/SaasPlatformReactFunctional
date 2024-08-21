@@ -1,8 +1,10 @@
 import React from 'react'
 import './exit.css'
 import { useNavigate } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 
 const Exit = () => {
+  const {t} = useTranslation();
   const navigate = useNavigate();
 
   const handleLogout = () => {
@@ -11,7 +13,7 @@ const Exit = () => {
  
   return (
      <div onClick={handleLogout}>
-       <span>Çıkış</span>
+       <span>{t('sidebar.exit')}</span>
      </div>
   )
 }

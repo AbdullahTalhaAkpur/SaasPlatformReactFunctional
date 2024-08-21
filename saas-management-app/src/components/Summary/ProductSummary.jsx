@@ -1,10 +1,12 @@
 import React from 'react';
 import { Box, Card, CardContent, Typography, Grid } from '@mui/material';
+import { useTranslation } from 'react-i18next';
 
 const ProductSummary = ({ productions = [] }) => {
+  const { t } = useTranslation();
   return (
     <Box p={2}>
-      <Typography variant="h6">Üretim Takip</Typography>
+      <Typography variant="h6">{t('dashboard.production_tracking')}</Typography>
       <Grid container spacing={2}>
         {productions.slice(0, 3).map((production) => (
           <Grid item xs={12} sm={6} md={4} key={production.id}>

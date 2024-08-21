@@ -28,5 +28,16 @@
     "agri_ai": "Agri-AI",
     "settings":  "Settings",
     "logout": "Logout"
+  },
+  "sidebar": {
+    "home": "Home",
+    "team": "Team",
+    "facilities": "Facilities",
+    "missions": "Missions",
+    "production_tracking": "Production Tracking",
+    "graphs": "Graphs",
+    "agri_ai": "Agri-AI",
+    "settings": "Settings",
+    "exit": "Exit"
   }
 }

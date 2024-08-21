@@ -28,5 +28,16 @@
     "agri_ai": "Agri-AI",
     "settings": "Ayarlar",
     "logout": "Çıkış"
+  },
+  "sidebar": {
+    "home": "Ana Sayfa",
+    "team": "Takım",
+    "facilities": "Tesisler",
+    "missions": "Görevler",
+    "production_tracking": "Üretim Takip",
+    "graphs": "Grafikler",
+    "agri_ai": "Agri-Al",
+    "settings": "Ayarlar",
+    "exit": "Çıkış"
   }
 }

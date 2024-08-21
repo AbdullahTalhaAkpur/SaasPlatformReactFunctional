@@ -13,9 +13,11 @@ import ExitToAppIcon from '@mui/icons-material/ExitToApp';
 import logo from '../assets/Logo_Dikey.png'; // Adjust the path to your logo file
 import { Link} from 'react-router-dom';
 import Exit from '../Exit/Exit';
+import { useTranslation } from 'react-i18next';
 
 
 const Sidebar = () => {
+  const {t} = useTranslation();
 
   return (
     <Drawer
@@ -37,35 +39,35 @@ const Sidebar = () => {
       <List sx={{ mt: 2}} >
         <ListItem button component={Link} to="/dashboard/home" sx={{paddingLeft: 6, '&:hover': {backgroundColor: '#bad28f' }}}>
           <ListItemIcon><HomeIcon /></ListItemIcon>
-          <ListItemText primary="Ana Sayfa" />
+          <ListItemText primary={t('sidebar.home')} />
         </ListItem>
         <ListItem button component={Link} to="/dashboard/team" sx={{paddingLeft: 6, '&:hover': {backgroundColor: '#bad28f' }}}>
           <ListItemIcon><GroupIcon /></ListItemIcon>
-          <ListItemText primary="Takım" />
+          <ListItemText primary={t('sidebar.team')} />
         </ListItem>
         <ListItem button component={Link} to="/dashboard/facilities" sx={{paddingLeft: 6, '&:hover': {backgroundColor: '#bad28f' }}}>
           <ListItemIcon><BusinessIcon /></ListItemIcon>
-          <ListItemText primary="Tesisler" />
+          <ListItemText primary={t('sidebar.facilities')} />
         </ListItem>
         <ListItem button component={Link} to="/dashboard/missions" sx={{paddingLeft: 6, '&:hover': {backgroundColor: '#bad28f' }}}>
           <ListItemIcon><AssignmentIcon /></ListItemIcon>
-          <ListItemText primary="Görevler" />
+          <ListItemText primary={t('sidebar.missions')} />
         </ListItem>
         <ListItem button component={Link} to="/dashboard/production-tracking" sx={{paddingLeft: 6, '&:hover': {backgroundColor: '#bad28f' }}}>
           <ListItemIcon><TrackChangesIcon /></ListItemIcon>
-          <ListItemText primary="Üretim Takip" />
+          <ListItemText primary={t('sidebar.production_tracking')} />
         </ListItem>
         <ListItem button component={Link} to="/dashboard/graphs" sx={{paddingLeft: 6, '&:hover': {backgroundColor: '#bad28f' }}}>
           <ListItemIcon><BarChartIcon /></ListItemIcon>
-          <ListItemText primary="Grafikler" />
+          <ListItemText primary={t('sidebar.graphs')} />
         </ListItem>
         <ListItem button component={Link} to="/dashboard/chatbot" sx={{paddingLeft: 6, '&:hover': {backgroundColor: '#bad28f' }}}>
           <ListItemIcon><ChatIcon /></ListItemIcon>
-          <ListItemText primary="Agri-Al" />
+          <ListItemText primary={t('sidebar.agri_ai')} />
         </ListItem>
         <ListItem button component={Link} to="/dashboard/settings" sx={{paddingLeft: 6, '&:hover': {backgroundColor: '#bad28f' }}}>
           <ListItemIcon><SettingsIcon /></ListItemIcon>
-          <ListItemText primary="Ayarlar" />
+          <ListItemText primary={t('sidebar.settings')} />
         </ListItem>
       </List>
       <Box sx={{ flexGrow: 1 }} />
