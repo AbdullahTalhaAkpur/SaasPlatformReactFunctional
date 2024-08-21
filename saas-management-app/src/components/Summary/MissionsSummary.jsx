@@ -13,9 +13,9 @@ const MissionsSummary = ({ missions = [] }) => {
             <Card>
               <CardContent>
                 <Typography variant="h6">{mission.taskName}</Typography>
-                <Typography variant="body2">{`Çalışan: ${mission.employee}`}</Typography>
-                <Typography variant="body2">{`Tesis: ${mission.facility}`}</Typography>
-                <Typography variant="body2">{`Durum: ${mission.completed ? 'Yapıldı' : 'Yapılıyor/Yapılacak'}`}</Typography>
+                <Typography variant="body2">{t('dashboard.employee')}: {mission.employee}</Typography>
+                <Typography variant="body2">{t('dashboard.facility')}: {mission.facility}</Typography>
+                <Typography variant="body2">{t('dashboard.status')} : {mission.completed ? 'Yapıldı' : 'Yapılıyor/Yapılacak'}</Typography>
               </CardContent>
             </Card>
           </Grid>
