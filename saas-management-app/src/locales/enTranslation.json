@@ -68,5 +68,20 @@
     "cancel": "Cancel",
     "submit": "Submit",
     "delete": "Delete"
+  },
+  "missions": {
+    "add_task": "Add Task",
+    "dialog_title": "Add Task",
+    "task_name": "Task Name",
+    "employee": "Employee",
+    "role": "Role",
+    "facility": "Facility",
+    "status": "Status",
+    "completed": "Completed",
+    "in_progress": "In Progress / Pending",
+    "cancel": "Cancel",
+    "submit": "Submit",
+    "delete": "Delete",
+    "no_tasks": "No tasks available."
   }
 }

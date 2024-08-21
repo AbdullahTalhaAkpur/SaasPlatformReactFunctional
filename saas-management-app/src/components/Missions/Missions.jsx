@@ -2,8 +2,10 @@ import React, { useState, useEffect } from 'react';
 import './mission.css';
 import { Box, Button, Card, CardContent, Grid, TextField, Typography, Dialog, DialogActions, DialogContent, DialogTitle, IconButton, MenuItem, Select, FormControl, InputLabel, Checkbox } from '@mui/material';
 import { Add, Delete, CheckBoxOutlineBlank, CheckBox } from '@mui/icons-material';
+import { useTranslation } from 'react-i18next';
 
 const Missions = ({ members = [], missions = [], setMissions }) => {
+  const {t} = useTranslation()
   const [tasks, setTasks] = useState(() => {
     const savedTasks = JSON.parse(localStorage.getItem('tasks'));
     return savedTasks || [];
@@ -83,22 +85,22 @@ const Missions = ({ members = [], missions = [], setMissions }) => {
     <div>
       <Box p={2}>
         <Button variant="contained" color="primary" startIcon={<Add />} onClick={handleClickOpenTaskDialog}>
-          Görev Ekle
+          {t('missions.add_task')}
         </Button>
         
         {/* Task Dialog */}
         <Dialog open={openTaskDialog} onClose={handleCloseTaskDialog}>
-          <DialogTitle>Görev Ekle</DialogTitle>
+          <DialogTitle>{t('missions.dialog_title')}</DialogTitle>
           <DialogContent>
-            <TextField autoFocus margin="dense" name="taskName" label="Görev Adı" fullWidth value={newTask.taskName} onChange={handleTaskChange} />
+            <TextField autoFocus margin="dense" name="taskName" label={t('missions.task_name')} fullWidth value={newTask.taskName} onChange={handleTaskChange} />
             <FormControl fullWidth margin="dense">
-              <InputLabel id="employee-label">Çalışan</InputLabel>
+              <InputLabel id="employee-label">{t('missions.employee')}</InputLabel>
               <Select
                 labelId="employee-label"
                 name="employee"
                 value={newTask.employee}
                 onChange={handleEmployeeChange}
-                label="Çalışan"
+                label={t('missions.employee')}
               >
                 {members.map(member => (
                   <MenuItem key={member.id} value={`${member.firstName} ${member.lastName}`}>
@@ -107,15 +109,15 @@ const Missions = ({ members = [], missions = [], setMissions }) => {
                 ))}
               </Select>
             </FormControl>
-            <TextField margin="dense" name="facility" label="Tesis Adı" fullWidth value={newTask.facility} onChange={handleTaskChange} />
+            <TextField margin="dense" name="facility" label={t('missions.facility')} fullWidth value={newTask.facility} onChange={handleTaskChange} />
             
           </DialogContent>
           <DialogActions>
             <Button onClick={handleCloseTaskDialog} color="primary">
-              İptal
+              {t('missions.cancel')}
             </Button>
             <Button onClick={handleAddTask} color="primary">
-              Ekle
+              {t('missions.submit')}
             </Button>
           </DialogActions>
         </Dialog>
@@ -138,29 +140,29 @@ const Missions = ({ members = [], missions = [], setMissions }) => {
                     <Box mt={2}>
                       <Grid container spacing={1}>
                         <Grid item xs={4} style={{ textAlign: 'left' }}>
-                          <Typography variant="body2" color="textSecondary"><strong>Çalışan:</strong></Typography>
+                          <Typography variant="body2" color="textSecondary"><strong>{t('missions.employee')}:</strong></Typography>
                         </Grid>
                         <Grid item xs={8} style={{ textAlign: 'left' }}>
                           <Typography variant="body2" color="textSecondary">{task.employee}</Typography>
                         </Grid>
                         <Grid item xs={4} style={{ textAlign: 'left' }}>
-                          <Typography variant="body2" color="textSecondary"><strong>Rol:</strong></Typography>
+                          <Typography variant="body2" color="textSecondary"><strong>{t('missions.role')}:</strong></Typography>
                         </Grid>
                         <Grid item xs={8} style={{ textAlign: 'left' }}>
                           <Typography variant="body2" color="textSecondary">{task.employeeRole}</Typography>
                         </Grid>
                         <Grid item xs={4} style={{ textAlign: 'left' }}>
-                          <Typography variant="body2" color="textSecondary"><strong>Tesis:</strong></Typography>
+                          <Typography variant="body2" color="textSecondary"><strong>{t('missions.facility')}:</strong></Typography>
                         </Grid>
                         <Grid item xs={8} style={{ textAlign: 'left' }}>
                           <Typography variant="body2" color="textSecondary">{task.facility}</Typography>
                         </Grid>
                         <Grid item xs={4} style={{ textAlign: 'left' }}>
-                          <Typography variant="body2" color="textSecondary"><strong>Durum:</strong></Typography>
+                          <Typography variant="body2" color="textSecondary"><strong>{t('missions.status')}:</strong></Typography>
                         </Grid>
                         <Grid item xs={8} style={{ textAlign: 'left' }}>
                           <Typography variant="body2" color="textSecondary">
-                            {task.completed ? 'Yapıldı' : 'Yapılıyor/Yapılacak'}
+                            {task.completed ? t('missions.completed') : t('missions.in_progress')}
                           </Typography>
                         </Grid>
                         <Grid item xs={12} style={{ textAlign: 'center', position: 'absolute',  right: '0', marginTop: '72px' }}>
@@ -179,7 +181,7 @@ const Missions = ({ members = [], missions = [], setMissions }) => {
             ))
           ) : (
             <Typography variant="h6" style={{ margin: 'auto', textAlign: 'center' }}>
-              No tasks available.
+              {t('missions.no_tasks')}
             </Typography>
           )}
         </Grid>

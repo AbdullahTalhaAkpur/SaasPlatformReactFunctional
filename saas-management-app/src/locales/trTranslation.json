@@ -68,5 +68,20 @@
     "cancel": "İptal",
     "submit": "Ekle",
     "delete": "Sil"
+  },
+  "missions": {
+    "add_task": "Görev Ekle",
+    "dialog_title": "Görev Ekle",
+    "task_name": "Görev Adı",
+    "employee": "Çalışan",
+    "role": "Rol",
+    "facility": "Tesis",
+    "status": "Durum",
+    "completed": "Yapıldı",
+    "in_progress": "Yapılıyor/Yapılacak",
+    "cancel": "İptal",
+    "submit": "Ekle",
+    "delete": "Sil",
+    "no_tasks": "Mevcut görev yok."
   }
 }
