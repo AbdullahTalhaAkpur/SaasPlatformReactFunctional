@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { Box, Button, TextField, Dialog, DialogActions, DialogContent, DialogTitle, Card, CardContent, Typography, IconButton, List } from '@mui/material';
 import { Add, Delete } from '@mui/icons-material';
+import { useTranslation } from 'react-i18next';
 
 const Product = ({ productions, setProductions }) => {
+  const {t} = useTranslation();
   const [open, setOpen] = useState(false);
   const [formData, setFormData] = useState({
     company: '',
@@ -49,17 +51,17 @@ const Product = ({ productions, setProductions }) => {
   return (
     <div>
       <Button variant="contained" color="primary" startIcon={<Add />} onClick={handleClickOpen}>
-        Ürün Ekle
+         {t('product.add_product')}
       </Button>
       <Dialog open={open} onClose={handleClose}>
-        <DialogTitle>Üretim Takip</DialogTitle>
+        <DialogTitle>{t('product.dialog_title')}</DialogTitle>
         <DialogContent>
           <Box component="form" sx={{ mt: 2 }}>
             <TextField
               autoFocus
               margin="dense"
               name="company"
-              label="Şirket"
+              label={t('product.company')}
               fullWidth
               value={formData.company}
               onChange={handleChange}
@@ -67,7 +69,7 @@ const Product = ({ productions, setProductions }) => {
             <TextField
               margin="dense"
               name="cameraCode"
-              label="Kamera Kodu"
+              label={t('product.camera_code')}
               fullWidth
               value={formData.cameraCode}
               onChange={handleChange}
@@ -75,7 +77,7 @@ const Product = ({ productions, setProductions }) => {
             <TextField
               margin="dense"
               name="productType"
-              label="Ürün Türü"
+              label={t('product.product_type')}
               fullWidth
               value={formData.productType}
               onChange={handleChange}
@@ -83,7 +85,7 @@ const Product = ({ productions, setProductions }) => {
             <TextField
               margin="dense"
               name="facility"
-              label="Tesis"
+              label={t('product.facility')}
               fullWidth
               value={formData.facility}
               onChange={handleChange}
@@ -91,7 +93,7 @@ const Product = ({ productions, setProductions }) => {
             <TextField
               margin="dense"
               name="initialProductCount"
-              label="İlk Ürün Sayısı"
+              label={t('product.initial_product_count')}
               fullWidth
               value={formData.initialProductCount}
               onChange={handleChange}
@@ -99,7 +101,7 @@ const Product = ({ productions, setProductions }) => {
             <TextField
               margin="dense"
               name="finalProductCount"
-              label="Son Ürün Sayısı"
+              label={t('product.final_product_count')}
               fullWidth
               value={formData.finalProductCount}
               onChange={handleChange}
@@ -108,15 +110,15 @@ const Product = ({ productions, setProductions }) => {
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose} color="primary">
-            İptal
+            {t('product.cancel')}
           </Button>
           <Button onClick={handleSubmit} color="primary">
-            Ekle
+            {t('product.submit')}
           </Button>
         </DialogActions>
       </Dialog>
       <Box sx={{ mt: 4 }}>
-        <Typography variant="h6" gutterBottom>Ürün Listesi</Typography>
+        <Typography variant="h6" gutterBottom>{t('product.product_list')}</Typography>
         <List sx={{ display: 'flex', flexWrap: 'wrap', gap: 2 }}>
           {productions.map((production) => (
             <Card key={production.id} sx={{ width: 300, mb: 2, position: 'relative' }}>
@@ -130,16 +132,16 @@ const Product = ({ productions, setProductions }) => {
               </IconButton>
               <CardContent>
                 <Typography variant="h6" component="div">
-                  Ürün Türü:  {production.productType}
+                 {t('product.product_type')} :  {production.productType}
                 </Typography>
                 <Typography  sx={{ mb: 1.5 }} color="text">
-                   Şirket: {production.company}
+                 {t('product.company')} : {production.company}
                 </Typography>
                 <Typography variant="body2">
-                  Kamera Kodu: {production.cameraCode}<br />
-                  Tesis: {production.facility}<br />
-                  İlk Ürün Sayısı: {production.initialProductCount}<br />
-                  Son Ürün Sayısı: {production.finalProductCount}
+                 {t('product.camera_code')} : {production.cameraCode}<br />
+                 {t('product.facility')} : {production.facility}<br />
+                 {t('product.initial_product_count')} : {production.initialProductCount}<br />
+                 {t('product.final_product_count')} : {production.finalProductCount}
                 </Typography>
               </CardContent>
             </Card>

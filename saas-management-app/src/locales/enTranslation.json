@@ -83,5 +83,19 @@
     "submit": "Submit",
     "delete": "Delete",
     "no_tasks": "No tasks available."
+  },
+  "product": {
+    "add_product": "Add Product",
+    "dialog_title": "Production Tracking",
+    "company": "Company",
+    "camera_code": "Camera Code",
+    "product_type": "Product Type",
+    "facility": "Facility",
+    "initial_product_count": "Initial Product Count",
+    "final_product_count": "Final Product Count",
+    "cancel": "Cancel",
+    "submit": "Submit",
+    "product_list": "Product List",
+    "delete": "Delete"
   }
 }

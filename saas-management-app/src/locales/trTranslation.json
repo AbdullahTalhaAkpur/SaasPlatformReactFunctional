@@ -83,5 +83,19 @@
     "submit": "Ekle",
     "delete": "Sil",
     "no_tasks": "Mevcut görev yok."
+  },
+  "product": {
+    "add_product": "Ürün Ekle",
+    "dialog_title": "Üretim Takip",
+    "company": "Şirket",
+    "camera_code": "Kamera Kodu",
+    "product_type": "Ürün Türü",
+    "facility": "Tesis",
+    "initial_product_count": "İlk Ürün Sayısı",
+    "final_product_count": "Son Ürün Sayısı",
+    "cancel": "İptal",
+    "submit": "Ekle",
+    "product_list": "Ürün Listesi",
+    "delete": "Sil"
   }
 }
