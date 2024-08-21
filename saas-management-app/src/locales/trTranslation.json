@@ -114,5 +114,14 @@
     "company_address": "Şirket Adresi",
     "company_no": "Şirket Numarası",
     "upload_company_logo": "Şirket Profili Resmi Yükle"
+  },
+  "change_password": {
+    "title": "Şifre Değiştir",
+    "current_password": "Mevcut Şifre",
+    "new_password": "Yeni Şifre",
+    "confirm_new_password": "Yeni Şifre (Tekrar)",
+    "passwords_do_not_match": "Yeni şifreler eşleşmiyor.",
+    "password_changed_successfully": "Şifreniz başarıyla değiştirildi.",
+    "change_password_button": "Şifreyi Değiştir"
   }
 }

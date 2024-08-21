@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { Box, TextField, Button, Typography } from '@mui/material';
 import './changePassword.css'; // Import the CSS file
+import { useTranslation } from 'react-i18next';
 
 const ChangePassword = () => {
+  const {t} = useTranslation();
   const [currentPassword, setCurrentPassword] = useState('');
   const [newPassword, setNewPassword] = useState('');
   const [confirmNewPassword, setConfirmNewPassword] = useState('');
@@ -32,10 +34,10 @@ const ChangePassword = () => {
 
   return (
     <Box className="change-password-container">
-      <Typography variant="h6">Şifre Değiştir</Typography>
+      <Typography variant="h6">{t('change_password.title')}</Typography>
       <form onSubmit={handleChangePassword} className="change-password-form">
         <TextField
-          label="Mevcut Şifre"
+          label={t('change_password.current_password')}
           type="password"
           fullWidth
           required
@@ -44,7 +46,7 @@ const ChangePassword = () => {
           margin="normal"
         />
         <TextField
-          label="Yeni Şifre"
+          label={t('change_password.new_password')}
           type="password"
           fullWidth
           required
@@ -53,7 +55,7 @@ const ChangePassword = () => {
           margin="normal"
         />
         <TextField
-          label="Yeni Şifre (Tekrar)"
+          label={t('change_password.confirm_new_password')}
           type="password"
           fullWidth
           required
@@ -64,7 +66,7 @@ const ChangePassword = () => {
         {error && <Typography color="error">{error}</Typography>}
         {success && <Typography color="primary">{success}</Typography>}
         <Button type="submit" variant="contained" color="primary">
-          Şifreyi Değiştir
+           {t('change_password.change_password_button')}
         </Button>
       </form>
     </Box>

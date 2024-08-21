@@ -13,8 +13,8 @@ const FacilitiesSummary = ({ facilities = [] }) => {
             <Card>
               <CardContent>
                 <Typography variant="h6">{facility.facilityName}</Typography>
-                <Typography variant="body2">{facility.address}</Typography>
-                <Typography variant="body2">{facility.company}</Typography>
+                <Typography variant="body2">{`Adres:  ${facility.address}`}</Typography>
+                <Typography variant="body2">{`Şirket: ${facility.company}`}</Typography>
               </CardContent>
             </Card>
           </Grid>

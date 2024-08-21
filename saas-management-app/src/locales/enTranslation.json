@@ -114,5 +114,14 @@
     "company_address": "Company Address",
     "company_no": "Company No",
     "upload_company_logo": "Upload Company Logo"
+  },
+  "change_password": {
+    "title": "Change Password",
+    "current_password": "Current Password",
+    "new_password": "New Password",
+    "confirm_new_password": "Confirm New Password",
+    "passwords_do_not_match": "The new passwords do not match.",
+    "password_changed_successfully": "Your password has been successfully changed.",
+    "change_password_button": "Change Password"
   }
 }
