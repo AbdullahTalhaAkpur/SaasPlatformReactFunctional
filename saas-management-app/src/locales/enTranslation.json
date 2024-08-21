@@ -1,8 +1,21 @@
 {
-  "Login": "Login",
-  "Username": "Username",
-  "Password": "Password",
-  "Dont have an account ? ": "Don't have an account?",
-  "Register": "Register",
-  "Forgot Password?": "Forgot Password?"
+  "login": {
+    "title": "Login",
+    "username": "Username",
+    "password": "Password",
+    "submit": "Login",
+    "dont_have_account": "Don't have an account?",
+    "register": "Register",
+    "forgot_password": "Forgot Password?"
+  },
+  "register": {
+    "title": "Register",
+    "full_name": "Full Name",
+    "username": "Username",
+    "email": "Email",
+    "password": "Password",
+    "submit": "Register",
+    "already_have_account": "Already have an account?",
+    "login": "Login"
+  }
 }

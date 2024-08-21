@@ -1,8 +1,21 @@
 {
-  "Login": "Giriş",
-  "Username": "Kullanıcı Adı",
-  "Password": "Şifre",
-  "Dont have an account ? ": "Hesabınız yok mu?",
-  "Register": "Kayıt Ol",
-  "Forgot Password?": "Şifremi Unuttum?"
+  "login": {
+    "title": "Giriş",
+    "username": "Kullanıcı Adı",
+    "password": "Şifre",
+    "submit": "Giriş Yap",
+    "dont_have_account": "Hesabınız yok mu?",
+    "register": "Kayıt Ol",
+    "forgot_password": "Şifremi Unuttum?"
+  },
+  "register": {
+    "title": "Kayıt Ol",
+    "full_name": "Tam Ad",
+    "username": "Kullanıcı Adı",
+    "email": "E-posta",
+    "password": "Şifre",
+    "submit": "Kayıt Ol",
+    "already_have_account": "Zaten bir hesabınız var mı?",
+    "login": "Giriş Yap"
+  }
 }
