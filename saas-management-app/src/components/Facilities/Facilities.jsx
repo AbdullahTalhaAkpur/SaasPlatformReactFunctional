@@ -2,8 +2,11 @@ import React, { useState, useEffect } from 'react';
 import './facilities.css';
 import { Box, Button, Card, CardContent, Grid, TextField, Typography, Dialog, DialogActions, DialogContent, DialogTitle, IconButton } from '@mui/material';
 import { Add, Delete } from '@mui/icons-material';
+import { useTranslation} from 'react-i18next'
 
 const Facilities = () => {
+  const {t} = useTranslation();
+
   const [facilities, setFacilities] = useState(() => {
     const savedFacilities = JSON.parse(localStorage.getItem('facilities'));
     return savedFacilities || [];
@@ -57,23 +60,23 @@ const Facilities = () => {
     <div>
       <Box p={2}>
         <Button variant="contained" color="primary" startIcon={<Add />} onClick={handleClickOpenFacilityDialog}>
-          Tesis Ekle
+          {t('facilities.add_facility')}
         </Button>
         
         {/* Facility Dialog */}
         <Dialog open={openFacilityDialog} onClose={handleCloseFacilityDialog}>
-          <DialogTitle>Tesis Ekle</DialogTitle>
+          <DialogTitle>{t('facilities.dialog_title')}</DialogTitle>
           <DialogContent>
-            <TextField autoFocus margin="dense" name="facilityName" label="Tesis Adı" fullWidth value={newFacility.facilityName} onChange={handleFacilityChange} />
-            <TextField margin="dense" name="address" label="Adres" fullWidth value={newFacility.address} onChange={handleFacilityChange} />
-            <TextField margin="dense" name="company" label="Şirket" fullWidth value={newFacility.company} onChange={handleFacilityChange} />
+            <TextField autoFocus margin="dense" name="facilityName" label={t('facilities.facility_name')} fullWidth value={newFacility.facilityName} onChange={handleFacilityChange} />
+            <TextField margin="dense" name="address" label={t('facilities.address')} fullWidth value={newFacility.address} onChange={handleFacilityChange} />
+            <TextField margin="dense" name="company" label={t('facilities.company')} fullWidth value={newFacility.company} onChange={handleFacilityChange} />
           </DialogContent>
           <DialogActions>
             <Button onClick={handleCloseFacilityDialog} color="primary">
-              İptal
+            {t('facilities.cancel')}
             </Button>
             <Button onClick={handleAddFacility} color="primary">
-              Ekle
+            {t('facilities.submit')}
             </Button>
           </DialogActions>
         </Dialog>
@@ -93,10 +96,10 @@ const Facilities = () => {
                     {facility.facilityName}
                   </Typography>
                   <Typography variant="body2" color="textSecondary">
-                    <strong>Adres:</strong> {facility.address}
+                    <strong>{t('facilities.address')}:</strong> {facility.address}
                   </Typography>
                   <Typography variant="body2" color="textSecondary">
-                    <strong>Şirket:</strong> {facility.company}
+                    <strong>{t('facilities.company')}:</strong> {facility.company}
                   </Typography>
                 </CardContent>
               </Card>

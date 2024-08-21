@@ -58,5 +58,15 @@
       "engineer": "Mühendis",
       "field_worker": "Saha Çalışanı"
     }
+  },
+  "facilities": {
+    "add_facility": "Tesis Ekle",
+    "dialog_title": "Tesis Ekle",
+    "facility_name": "Tesis Adı",
+    "address": "Adres",
+    "company": "Şirket",
+    "cancel": "İptal",
+    "submit": "Ekle",
+    "delete": "Sil"
   }
 }

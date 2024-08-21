@@ -58,5 +58,15 @@
       "engineer": "Engineer",
       "field_worker": "Field Worker"
     }
+  },
+  "facilities": {
+    "add_facility": "Add Facility",
+    "dialog_title": "Add Facility",
+    "facility_name": "Facility Name",
+    "address": "Address",
+    "company": "Company",
+    "cancel": "Cancel",
+    "submit": "Submit",
+    "delete": "Delete"
   }
 }
