@@ -1,10 +1,12 @@
 import React from 'react';
 import { Box, Card, CardContent, Typography, Grid } from '@mui/material';
+import { useTranslation } from 'react-i18next';
 
 const MissionsSummary = ({ missions = [] }) => {
+  const {t} = useTranslation();
   return (
     <Box p={2}>
-      <Typography variant="h6">Görevler</Typography>
+      <Typography variant="h6">{t('dashboard.tasks')}</Typography>
       <Grid container spacing={2}>
         {missions.slice(0, 3).map((mission) => (
           <Grid item xs={12} sm={6} md={4} key={mission.id}>

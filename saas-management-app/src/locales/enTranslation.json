@@ -17,5 +17,16 @@
     "submit": "Register",
     "already_have_account": "Already have an account?",
     "login": "Login"
+  },
+  "dashboard": {
+    "home":  "Home",
+    "team": "Team",
+    "facilities": "Facilities",
+    "tasks": "Tasks",
+    "production_tracking": "Production Tracking",
+    "charts": "Charts",
+    "agri_ai": "Agri-AI",
+    "settings":  "Settings",
+    "logout": "Logout"
   }
 }

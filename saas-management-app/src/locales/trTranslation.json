@@ -17,5 +17,16 @@
     "submit": "Kayıt Ol",
     "already_have_account": "Zaten bir hesabınız var mı?",
     "login": "Giriş Yap"
+  },
+  "dashboard": {
+    "home": "Ana Sayfa",
+    "team": "Takım",
+    "facilities": "Tesisler",
+    "tasks": "Görevler",
+    "production_tracking": "Üretim Takip",
+    "charts": "Grafikler",
+    "agri_ai": "Agri-AI",
+    "settings": "Ayarlar",
+    "logout": "Çıkış"
   }
 }

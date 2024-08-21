@@ -1,6 +1,7 @@
 import React from 'react';
 import { LineChart, Line, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import { Box, Typography } from '@mui/material';
+import { useTranslation } from 'react-i18next';
 
 const lineChartData = [
   { time: '21:14:18', value: 6 },
@@ -25,9 +26,10 @@ const barChartData = [
 ];
 
 const GraphsSummary = ({ data }) => {
+  const {t} = useTranslation();
   return (
     <Box p={2}>
-      <Typography variant="h6">Grafikler</Typography>
+      <Typography variant="h6">{t('dashboard.charts')}</Typography>
       <div className="graphs-container">
         <div className="chart">
           <h3>MARUL GÖBEKLİ </h3>
