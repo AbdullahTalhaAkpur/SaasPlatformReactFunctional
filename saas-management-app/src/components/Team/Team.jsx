@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import './team.css';
 import { Box, Button, Card, CardContent, Grid, TextField, Typography, Dialog, DialogActions, DialogContent, DialogTitle, Input, Avatar, IconButton, MenuItem, Select, FormControl, InputLabel } from '@mui/material';
 import { Add, Delete } from '@mui/icons-material';
+import { useTranslation } from 'react-i18next'
 
 const Team = ({ members, setMembers }) => {
+  const {t} = useTranslation();
   const [open, setOpen] = useState(false);
   const [newMember, setNewMember] = useState({
     firstName: '',
@@ -71,45 +73,45 @@ const Team = ({ members, setMembers }) => {
     <div>
       <Box p={2}>
         <Button variant="contained" color="primary" startIcon={<Add />} onClick={handleClickOpen}>
-          Üye Ekle
+        {t('team.add_member')}
         </Button>
         <Dialog open={open} onClose={handleClose}>
-          <DialogTitle>Üye Ekle</DialogTitle>
+          <DialogTitle>{t('team.dialog_title')}</DialogTitle>
           <DialogContent>
             <Grid container spacing={2} alignItems="center">
               <Grid item>
-                <Avatar src={newMember.picture} style={{ width: 100, height: 100 }} />
+                <Avatar src={newMember.picture}  style={{ width: 100, height: 100 }} />
               </Grid>
               <Grid item>
                 <Input type="file" name="picture" fullWidth sx={{ marginTop: 2 }} onChange={handleFileChange} />
               </Grid>
             </Grid>
-            <TextField autoFocus margin="dense" name="firstName" label="İsim" fullWidth value={newMember.firstName} onChange={handleChange} />
-            <TextField margin="dense" name="lastName" label="Soyisim" fullWidth value={newMember.lastName} onChange={handleChange} />
-            <TextField margin="dense" name="department" label="Departman" fullWidth value={newMember.department} onChange={handleChange} />
-            <TextField margin="dense" name="email" label="Email" fullWidth value={newMember.email} onChange={handleChange} />
-            <TextField margin="dense" name="company" label="Şirket" fullWidth value={newMember.company} onChange={handleChange} />
+            <TextField autoFocus margin="dense" name="firstName" label={t('team.first_name')} fullWidth value={newMember.firstName} onChange={handleChange} />
+            <TextField margin="dense" name="lastName" label={t('team.last_name')} fullWidth value={newMember.lastName} onChange={handleChange} />
+            <TextField margin="dense" name="department" label={t('team.department')} fullWidth value={newMember.department} onChange={handleChange} />
+            <TextField margin="dense" name="email" label={t('team.email')} fullWidth value={newMember.email} onChange={handleChange} />
+            <TextField margin="dense" name="company" label={t('team.company')}  fullWidth value={newMember.company} onChange={handleChange} />
             <FormControl fullWidth margin="dense">
-              <InputLabel id="role-label">Rol</InputLabel>
+              <InputLabel id="role-label">{t('team.role')}</InputLabel>
               <Select
                 labelId="role-label"
                 name="role"
                 value={newMember.role}
                 onChange={handleChange}
-                label="Rol"
+                label={t('team.role')}
               >
-                <MenuItem value="Yönetici">Yönetici</MenuItem>
-                <MenuItem value="Mühendis">Mühendis</MenuItem>
-                <MenuItem value="Saha Çalışanı">Saha Çalışanı</MenuItem>
+                <MenuItem value="Yönetici">{t('team.roles.manager')}</MenuItem>
+                <MenuItem value="Mühendis">{t('team.roles.engineer')}</MenuItem>
+                <MenuItem value="Saha Çalışanı">{t('team.roles.field_worker')}</MenuItem>
               </Select>
             </FormControl>
           </DialogContent>
           <DialogActions>
             <Button onClick={handleClose} color="primary">
-              İptal
+            {t('team.cancel')}
             </Button>
             <Button onClick={handleAddMember} color="primary">
-              Ekle
+            {t('team.submit')}
             </Button>
           </DialogActions>
         </Dialog>
@@ -134,25 +136,25 @@ const Team = ({ members, setMembers }) => {
                   <Box mt={2}>
                     <Grid container spacing={1}>
                       <Grid item xs={4} style={{ textAlign: 'left' }}>
-                        <Typography variant="body2" color="textSecondary"><strong>Departman:</strong></Typography>
+                        <Typography variant="body2" color="textSecondary"><strong>{t('team.department')}:</strong></Typography>
                       </Grid>
                       <Grid item xs={8} style={{ textAlign: 'left' }}>
                         <Typography variant="body2" color="textSecondary">{member.department}</Typography>
                       </Grid>
                       <Grid item xs={4} style={{ textAlign: 'left' }}>
-                        <Typography variant="body2" color="textSecondary"><strong>Email:</strong></Typography>
+                        <Typography variant="body2" color="textSecondary"><strong>{t('team.email')}:</strong></Typography>
                       </Grid>
                       <Grid item xs={8} style={{ textAlign: 'left' }}>
                         <Typography variant="body2" color="textSecondary">{member.email}</Typography>
                       </Grid>
                       <Grid item xs={4} style={{ textAlign: 'left' }}>
-                        <Typography variant="body2" color="textSecondary"><strong>Şirket:</strong></Typography>
+                        <Typography variant="body2" color="textSecondary"><strong>{t('team.company')}:</strong></Typography>
                       </Grid>
                       <Grid item xs={8} style={{ textAlign: 'left' }}>
                         <Typography variant="body2" color="textSecondary">{member.company}</Typography>
                       </Grid>
                       <Grid item xs={4} style={{ textAlign: 'left' }}>
-                        <Typography variant="body2" color="textSecondary"><strong>Rol:</strong></Typography>
+                        <Typography variant="body2" color="textSecondary"><strong>{t('team.role')}:</strong></Typography>
                       </Grid>
                       <Grid item xs={8} style={{ textAlign: 'left' }}>
                         <Typography variant="body2" color="textSecondary">{member.role}</Typography>

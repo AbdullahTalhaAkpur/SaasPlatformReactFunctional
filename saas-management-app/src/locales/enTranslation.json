@@ -39,5 +39,24 @@
     "agri_ai": "Agri-AI",
     "settings": "Settings",
     "exit": "Exit"
+  },
+  "team": {
+    "add_member": "Add Member",
+    "dialog_title": "Add Member",
+    "first_name": "First Name",
+    "last_name": "Last Name",
+    "department": "Department",
+    "email": "Email",
+    "company": "Company",
+    "role": "Role",
+    "cancel": "Cancel",
+    "submit": "Submit",
+    "delete": "Delete",
+    "no_picture": "No Picture",
+    "roles": {
+      "manager": "Manager",
+      "engineer": "Engineer",
+      "field_worker": "Field Worker"
+    }
   }
 }

@@ -39,5 +39,24 @@
     "agri_ai": "Agri-Al",
     "settings": "Ayarlar",
     "exit": "Çıkış"
+  },
+  "team": {
+    "add_member": "Üye Ekle",
+    "dialog_title": "Üye Ekle",
+    "first_name": "İsim",
+    "last_name": "Soyisim",
+    "department": "Departman",
+    "email": "Email",
+    "company": "Şirket",
+    "role": "Rol",
+    "cancel": "İptal",
+    "submit": "Ekle",
+    "delete": "Sil",
+    "no_picture": "Fotoğraf Yok",
+    "roles": {
+      "manager": "Yönetici",
+      "engineer": "Mühendis",
+      "field_worker": "Saha Çalışanı"
+    }
   }
 }
