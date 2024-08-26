@@ -23,7 +23,7 @@ const Login = ({ onSwitchForm }) => {
     event.preventDefault();
     login(username, password);
     localStorage.setItem('language', i18n.language);
-    navigate('/Dashboard', { replace: true });
+    navigate('/dashboard/home', { replace: true });
   };
 
   const changeLanguage = (lang) => {
