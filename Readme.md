@@ -19,9 +19,9 @@ This repository contains the frontend part of the SaasRPlatform. SaasRPlatform, 
 - **Axios:** HTTP istekleri yapmak için kullanılan bir JavaScript kütüphanesi.
 
   ## React Dashboard Project
-  This is our login page which i designed by myself
+  This is our login page which I designed by myself.
 
-  ![Login Page](images/Login Page.png)
+  ![Login Page](images/LoginPage.png)
 
   ## Dashboard Home
   This is our Home Page
