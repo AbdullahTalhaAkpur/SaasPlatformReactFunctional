@@ -18,6 +18,31 @@ This repository contains the frontend part of the SaasRPlatform. SaasRPlatform, 
 - **Material-UI:** Kullanıcı arayüzü bileşenleri oluşturmak için kullanılan bir React kütüphanesi.
 - **Axios:** HTTP istekleri yapmak için kullanılan bir JavaScript kütüphanesi.
 
+  ## React Dashboard Project
+  This is our login page which i designed by myself
+
+  ![Login Page](images/Login Page.png)
+
+  ## Dashboard Home
+  This is our Home Page
+
+   ![Home Page](images/Dashboard.png)
+
+   ## Missions
+  This is our Missions Page
+
+  ![Missions Page](images/Missions.png)
+
+  ## Graphs
+  This is our Graphs Page
+
+   ![Graphs Page](images/Graphs.png)
+
+  ## Chatbot
+  This is our Special Chatbot
+
+   ![Chatbot Page](images/Agri-ai.png)
+
 
 ## License
 
