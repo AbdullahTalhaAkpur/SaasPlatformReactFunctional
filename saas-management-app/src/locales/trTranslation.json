@@ -1,0 +1,135 @@
+{
+  "login": {
+    "title": "Giriş",
+    "username": "Kullanıcı Adı",
+    "password": "Şifre",
+    "submit": "Giriş Yap",
+    "dont_have_account": "Hesabınız yok mu?",
+    "register": "Kayıt Ol",
+    "forgot_password": "Şifremi Unuttum?"
+  },
+  "register": {
+    "title": "Kayıt Ol",
+    "full_name": "Tam Ad",
+    "username": "Kullanıcı Adı",
+    "email": "E-posta",
+    "password": "Şifre",
+    "submit": "Kayıt Ol",
+    "already_have_account": "Zaten bir hesabınız var mı?",
+    "login": "Giriş Yap"
+  },
+  "dashboard": {
+    "home": "Ana Sayfa",
+    "team": "Takım",
+    "facilities": "Tesisler",
+    "tasks": "Görevler",
+    "production_tracking": "Üretim Takip",
+    "facility_name":  "Tesis Adı",
+    "address": "Adres",
+    "company": "Şirket",
+    "product_type":"Ürün Türü",
+    "camera_code":"Kamera Kodu",
+    "facility": "Tesis",
+    "employee": "Çalışan",
+    "status": "Durum",
+    "charts": "Grafikler",
+    "agri_ai": "Agri-AI",
+    "settings": "Ayarlar",
+    "logout": "Çıkış"
+  },
+  "sidebar": {
+    "home": "Ana Sayfa",
+    "team": "Takım",
+    "facilities": "Tesisler",
+    "missions": "Görevler",
+    "production_tracking": "Üretim Takip",
+    "graphs": "Grafikler",
+    "agri_ai": "Agri-Al",
+    "settings": "Ayarlar",
+    "exit": "Çıkış"
+  },
+  "team": {
+    "add_member": "Üye Ekle",
+    "dialog_title": "Üye Ekle",
+    "first_name": "İsim",
+    "last_name": "Soyisim",
+    "department": "Departman",
+    "email": "Email",
+    "company": "Şirket",
+    "role": "Rol",
+    "cancel": "İptal",
+    "submit": "Ekle",
+    "delete": "Sil",
+    "no_picture": "Fotoğraf Yok",
+    "roles": {
+      "manager": "Yönetici",
+      "engineer": "Mühendis",
+      "field_worker": "Saha Çalışanı"
+    }
+  },
+  "facilities": {
+    "add_facility": "Tesis Ekle",
+    "dialog_title": "Tesis Ekle",
+    "facility_name": "Tesis Adı",
+    "address": "Adres",
+    "company": "Şirket",
+    "cancel": "İptal",
+    "submit": "Ekle",
+    "delete": "Sil"
+  },
+  "missions": {
+    "add_task": "Görev Ekle",
+    "dialog_title": "Görev Ekle",
+    "task_name": "Görev Adı",
+    "employee": "Çalışan",
+    "role": "Rol",
+    "facility": "Tesis",
+    "status": "Durum",
+    "completed": "Yapıldı",
+    "in_progress": "Yapılıyor/Yapılacak",
+    "cancel": "İptal",
+    "submit": "Ekle",
+    "delete": "Sil",
+    "no_tasks": "Mevcut görev yok."
+  },
+  "product": {
+    "add_product": "Ürün Ekle",
+    "dialog_title": "Üretim Takip",
+    "company": "Şirket",
+    "camera_code": "Kamera Kodu",
+    "product_type": "Ürün Türü",
+    "facility": "Tesis",
+    "initial_product_count": "İlk Ürün Sayısı",
+    "final_product_count": "Son Ürün Sayısı",
+    "cancel": "İptal",
+    "submit": "Ekle",
+    "product_list": "Ürün Listesi",
+    "delete": "Sil"
+  },
+  "user_profile": {
+    "title": "Kullanıcı Profili",
+    "email": "E-posta",
+    "first_name": "Ad",
+    "last_name": "Soyad",
+    "department": "Departman",
+    "company": "Şirket",
+    "upload_profile_picture": "Profil Resmi Yükle"
+  },
+  "company_profile": {
+    "title": "Şirket Profili",
+    "company_name": "Şirket Adı",
+    "company_email": "Şirket Email",
+    "company_address": "Şirket Adresi",
+    "company_no": "Şirket Numarası",
+    "upload_company_logo": "Şirket Profili Resmi Yükle"
+  },
+  "change_password": {
+    "title": "Şifre Değiştir",
+    "current_password": "Mevcut Şifre",
+    "new_password": "Yeni Şifre",
+    "confirm_new_password": "Yeni Şifre (Tekrar)",
+    "passwords_do_not_match": "Yeni şifreler eşleşmiyor.",
+    "password_changed_successfully": "Şifreniz başarıyla değiştirildi.",
+    "change_password_button": "Şifreyi Değiştir"
+  }
+}

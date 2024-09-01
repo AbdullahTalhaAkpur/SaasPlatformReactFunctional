@@ -1,0 +1,16 @@
+.profile-card {
+          max-width: 400px;
+          margin: auto;
+        }
+        
+        .profile-header {
+          text-align: center;
+        }
+        
+        .company-logo {
+          width: 150px;
+          height: auto;
+          object-fit: contain;
+          margin-bottom: 16px;
+        }
+        

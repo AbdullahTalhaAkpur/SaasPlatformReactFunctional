@@ -1,0 +1,28 @@
+.chatbot {
+          display: flex;
+          flex-direction: column-reverse;
+          height: 400px;
+          border: 1px solid #ccc;
+          padding: 10px;
+          border-radius: 5px;
+          overflow: hidden;
+        }
+        
+        .message-list {
+          flex: 1;
+          overflow-y: auto;
+        }
+        
+        .input-box {
+          display: flex;
+          gap: 10px;
+        }
+        
+        .user .MuiListItemText-root {
+          text-align: right;
+        }
+        
+        .bot .MuiListItemText-root {
+          text-align: left;
+        }
+        

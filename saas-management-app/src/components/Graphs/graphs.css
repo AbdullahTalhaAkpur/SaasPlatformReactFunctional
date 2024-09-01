@@ -1,0 +1,15 @@
+.graphs-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.chart {
+  margin: 20px;
+  width: 45%;
+}
+
+h3 {
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+}

@@ -1,0 +1,135 @@
+{
+  "login": {
+    "title": "Login",
+    "username": "Username",
+    "password": "Password",
+    "submit": "Login",
+    "dont_have_account": "Don't have an account?",
+    "register": "Register",
+    "forgot_password": "Forgot Password?"
+  },
+  "register": {
+    "title": "Register",
+    "full_name": "Full Name",
+    "username": "Username",
+    "email": "Email",
+    "password": "Password",
+    "submit": "Register",
+    "already_have_account": "Already have an account?",
+    "login": "Login"
+  },
+  "dashboard": {
+    "home":  "Home",
+    "team": "Team",
+    "facilities": "Facilities",
+    "tasks": "Tasks",
+    "production_tracking": "Production Tracking",
+    "facility_name": "Facility",
+    "address": "Address",
+    "company": "Company",
+    "product_type":"Product Type",
+    "camera_code": "Camera Code",
+    "facility": "Facility",
+    "employee": "Employee",
+    "status": "Status",
+    "charts": "Charts",
+    "agri_ai": "Agri-AI",
+    "settings":  "Settings",
+    "logout": "Logout"
+  },
+  "sidebar": {
+    "home": "Home",
+    "team": "Team",
+    "facilities": "Facilities",
+    "missions": "Missions",
+    "production_tracking": "Production Tracking",
+    "graphs": "Graphs",
+    "agri_ai": "Agri-AI",
+    "settings": "Settings",
+    "exit": "Exit"
+  },
+  "team": {
+    "add_member": "Add Member",
+    "dialog_title": "Add Member",
+    "first_name": "First Name",
+    "last_name": "Last Name",
+    "department": "Department",
+    "email": "Email",
+    "company": "Company",
+    "role": "Role",
+    "cancel": "Cancel",
+    "submit": "Submit",
+    "delete": "Delete",
+    "no_picture": "No Picture",
+    "roles": {
+      "manager": "Manager",
+      "engineer": "Engineer",
+      "field_worker": "Field Worker"
+    }
+  },
+  "facilities": {
+    "add_facility": "Add Facility",
+    "dialog_title": "Add Facility",
+    "facility_name": "Facility Name",
+    "address": "Address",
+    "company": "Company",
+    "cancel": "Cancel",
+    "submit": "Submit",
+    "delete": "Delete"
+  },
+  "missions": {
+    "add_task": "Add Task",
+    "dialog_title": "Add Task",
+    "task_name": "Task Name",
+    "employee": "Employee",
+    "role": "Role",
+    "facility": "Facility",
+    "status": "Status",
+    "completed": "Completed",
+    "in_progress": "In Progress / Pending",
+    "cancel": "Cancel",
+    "submit": "Submit",
+    "delete": "Delete",
+    "no_tasks": "No tasks available."
+  },
+  "product": {
+    "add_product": "Add Product",
+    "dialog_title": "Production Tracking",
+    "company": "Company",
+    "camera_code": "Camera Code",
+    "product_type": "Product Type",
+    "facility": "Facility",
+    "initial_product_count": "Initial Product Count",
+    "final_product_count": "Final Product Count",
+    "cancel": "Cancel",
+    "submit": "Submit",
+    "product_list": "Product List",
+    "delete": "Delete"
+  },
+  "user_profile": {
+    "title": "User Profile",
+    "email": "Email",
+    "first_name": "First Name",
+    "last_name": "Last Name",
+    "department": "Department",
+    "company": "Company",
+    "upload_profile_picture": "Upload Profile Picture"
+  },
+  "company_profile": {
+    "title": "Company Profile",
+    "company_name": "Company Name",
+    "company_email": "Company Email",
+    "company_address": "Company Address",
+    "company_no": "Company No",
+    "upload_company_logo": "Upload Company Logo"
+  },
+  "change_password": {
+    "title": "Change Password",
+    "current_password": "Current Password",
+    "new_password": "New Password",
+    "confirm_new_password": "Confirm New Password",
+    "passwords_do_not_match": "The new passwords do not match.",
+    "password_changed_successfully": "Your password has been successfully changed.",
+    "change_password_button": "Change Password"
+  }
+}

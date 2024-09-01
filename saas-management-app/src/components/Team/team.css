@@ -1,0 +1,9 @@
+.button {
+          margin: 10px;
+        }
+        
+        .card {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+       }
