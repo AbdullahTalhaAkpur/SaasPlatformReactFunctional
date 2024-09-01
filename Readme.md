@@ -1,6 +1,6 @@
 # SaasRPlatform React Functional
 
-This repository contains the frontend part of the SaasRPlatform. SaasRPlatform, React işlevsel bileşenleri kullanılarak oluşturulmuş bir yazılım hizmeti platformudur.
+This repository contains the frontend part of the SaasRPlatform. SaasRPlatform, React işlevsel bileşenleri kullanılarak oluşturulmuş bir yazılım hizmeti platformudur.Agriverts firmasının arayüzünü geliştirdim. React,Node,Material Uİ kullandım ve çoklu dil yapısı için i18n kullandım.
 
 ## Features
 
